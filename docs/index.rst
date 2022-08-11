@@ -8,14 +8,7 @@
 
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Main Contents
-
-   overview
-   
-
-.. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Packages
 
    mda.biber/mda.biber.md
