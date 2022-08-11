@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 
-.. include:: overview.md
+.. include:: overview.rst
 
 
 .. toctree::

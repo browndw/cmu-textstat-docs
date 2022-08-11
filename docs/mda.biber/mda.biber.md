@@ -1,4 +1,4 @@
-## mda.biber
+# mda.biber
 
 Multi-Dimensional Analysis (MDA) is a complex statistical procedure developed by [Douglas Biber](https://link.springer.com/article/10.1007/BF00136979). It is largely used to describe language as it varies by genre, register, and use.
 

@@ -1,4 +1,4 @@
-## ngramr.plus
+# ngramr.plus
 
 This package has functions for processing [Google's Ngram repositories](http://storage.googleapis.com/books/ngrams/books/datasetsv2.html) without having to download them locally. These repositories vary in their size, but the larger ones (like th one for the letter *s* or common bigrams) contain multiple gigabytes.
 

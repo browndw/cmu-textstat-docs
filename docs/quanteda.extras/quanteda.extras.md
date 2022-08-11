@@ -1,4 +1,4 @@
-## quanteda.extras
+# quanteda.extras
 
 This package contains statstical and plotting tools that expand the functionality of [quanteda](http://quanteda.io/). These include functions for calculating:
 

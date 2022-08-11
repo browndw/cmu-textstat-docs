@@ -1,4 +1,4 @@
-## Pseudo-Biber Aggregator
+# pseudobibeR
 
 The R scipts in this repository aggregate the lexicogrammatical and functonal features described by Biber (1985) and widely used for text-type, register, and genre classification tasks.
 

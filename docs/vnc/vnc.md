@@ -1,4 +1,4 @@
-## vnc
+# vnc
 
 This package contains functions based on the work of Greis and Hilpert (2012) for [Variability-Based Neighbor Clustering](https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780199922765.001.0001/oxfordhb-9780199922765-e-14).
 
