@@ -1,0 +1,308 @@
+# Introduction to the ngramr.plus R package
+
+## Load the ngramr.plus package
+
+Load the package, as well as others that we’ll use in this vignette.
+
+``` r
+library(ngramr.plus)
+library(tidyverse)
+```
+
+## Retrieving data
+
+Running the functions is straightforward, but remember that it can take
+a couple minutes if your are loading one of the larger Google Books data
+tables. Here we return counts of *zinger* by year from the data tables
+for US English.
+
+``` r
+z_year <- google_ngram(word_forms = "zinger", variety = "us", by = "year")
+```
+
+Check the data:
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Year
+</th>
+<th style="text-align:right;">
+AF
+</th>
+<th style="text-align:right;">
+Total
+</th>
+<th style="text-align:right;">
+Per_10.6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1834
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+160777483
+</td>
+<td style="text-align:right;">
+0.0186593
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1835
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+213225556
+</td>
+<td style="text-align:right;">
+0.0140696
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1837
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+178891779
+</td>
+<td style="text-align:right;">
+0.0055900
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1857
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+426434283
+</td>
+<td style="text-align:right;">
+0.0070351
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1859
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+442579354
+</td>
+<td style="text-align:right;">
+0.0022595
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1860
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+455087035
+</td>
+<td style="text-align:right;">
+0.0043948
+</td>
+</tr>
+</tbody>
+</table>
+
+In current usage, *zinger* denotes a kind of cutting quip. Its [supposed
+origin](https://www.etymonline.com/word/zinger) is as a baseball term
+that becomes generalized in the middle of the 20th century. Does this
+explanation comport with the data?
+
+## Plot the data
+
+To partly answer such a question, we can plot the data:
+
+``` r
+  ggplot(z_year %>% filter(Year > 1799), aes(x=Year, y=Per_10.6)) +
+    geom_point(size = .5) +
+    geom_smooth(method = "gam", formula = y ~ s(x, bs = "cs"), size=.25) +
+    labs(x="year", y = "frequency (per million words)")+ 
+    theme(panel.grid.minor.x=element_blank(),
+          panel.grid.major.x=element_blank()) +
+    theme(panel.grid.minor.y =   element_blank(),
+          panel.grid.major.y =   element_line(colour = "gray",size=0.25)) +
+    theme(rect = element_blank()) +
+    theme(legend.title=element_blank()) +
+    theme(axis.title = element_text(family = "Arial", color="#666666", face="bold", size=10))
+```
+
+![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/ngramr.plus/vignettes/ngramr_introduction_files/figure-gfm/year_plot-1.png)<!-- -->
+
+There does appear to be some circulation prior to the mid-20th century.
+To explain that, we can look at [the underlying texts in Google
+Books](https://www.google.com/search?q=%22zinger%22&tbm=bks&tbs=cdr:1,cd_min:1800,cd_max:1893&lr=lang_en).
+
+## By decade
+
+Next, we’ll return counts of *zinger* and *zingers* by decade from the
+data tables for British English.
+
+``` r
+z_decade <- google_ngram(word_forms = c("zinger", "zingers"), variety = "gb", by = "decade")
+```
+
+Check the data:
+
+<table>
+<thead>
+<tr>
+<th style="text-align:right;">
+Decade
+</th>
+<th style="text-align:right;">
+AF
+</th>
+<th style="text-align:right;">
+Total
+</th>
+<th style="text-align:right;">
+Per_10.6
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1780
+</td>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:right;">
+374630337
+</td>
+<td style="text-align:right;">
+0.0053386
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1800
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+1302698028
+</td>
+<td style="text-align:right;">
+0.0007676
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1810
+</td>
+<td style="text-align:right;">
+12
+</td>
+<td style="text-align:right;">
+1802397035
+</td>
+<td style="text-align:right;">
+0.0066578
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1820
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+2558079128
+</td>
+<td style="text-align:right;">
+0.0011728
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1830
+</td>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:right;">
+2954836522
+</td>
+<td style="text-align:right;">
+0.0020306
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1840
+</td>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:right;">
+3547747138
+</td>
+<td style="text-align:right;">
+0.0008456
+</td>
+</tr>
+</tbody>
+</table>
+
+## Ploting the data
+
+Now we can filter and plot our by-decade data:
+
+``` r
+ggplot(z_decade %>% filter(Decade > 1799), aes(x=Decade, y=Per_10.6)) +
+  geom_bar(stat = "identity") +
+  labs(x="decade", y = "frequency (per million words)")+ 
+  theme(panel.grid.minor.x=element_blank(),
+         panel.grid.major.x=element_blank()) +
+  theme(panel.grid.minor.y =   element_blank(),
+        panel.grid.major.y =   element_line(colour = "gray",size=0.25)) +
+  theme(rect = element_blank()) +
+  theme(legend.title=element_blank()) +
+  theme(axis.title = element_text(family = "Arial", color="#666666", face="bold", size=10))
+```
+
+![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/ngramr.plus/vignettes/ngramr_introduction_files/figure-gfm/decade_plot-1.png)<!-- -->
+
+## Bibliography
+
+<div id="refs" class="references csl-bib-body hanging-indent">
+
+<div id="ref-michel2011quantitative" class="csl-entry">
+
+Michel, Jean-Baptiste, Yuan Kui Shen, Aviva Presser Aiden, Adrian Veres,
+Matthew K Gray, Joseph P Pickett, Dale Hoiberg, et al. 2011.
+“Quantitative Analysis of Culture Using Millions of Digitized Books.”
+*Science* 331 (6014): 176–82.
+<https://science.sciencemag.org/content/331/6014/176>.
+
+</div>
+
+</div>
