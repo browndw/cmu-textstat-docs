@@ -150,7 +150,7 @@ To partly answer such a question, we can plot the data:
     theme(axis.title = element_text(family = "Arial", color="#666666", face="bold", size=10))
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/ngramr.plus/vignettes/ngramr_introduction_files/figure-gfm/year_plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/ngramr_introduction_files/figure-gfm/year_plot-1.png)<!-- -->
 
 There does appear to be some circulation prior to the mid-20th century.
 To explain that, we can look at [the underlying texts in Google
@@ -289,7 +289,7 @@ ggplot(z_decade %>% filter(Decade > 1799), aes(x=Decade, y=Per_10.6)) +
   theme(axis.title = element_text(family = "Arial", color="#666666", face="bold", size=10))
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/ngramr.plus/vignettes/ngramr_introduction_files/figure-gfm/decade_plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/ngramr_introduction_files/figure-gfm/decade_plot-1.png)<!-- -->
 
 ## Bibliography
 
