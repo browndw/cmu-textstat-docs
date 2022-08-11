@@ -1,4 +1,6 @@
-# `from_play`
+# cmu.textstat functions
+
+## `from_play`
 
 This is a helper function for reading in the dialogue from Shakespeare plays
  and screenplays, which are formatted in very simple markup.
@@ -6,7 +8,7 @@ This is a helper function for reading in the dialogue from Shakespeare plays
  execrated in bulk. It can also be used to extract the dialogue of specific characters.
 
 
-## Description
+### Description
 
 This is a helper function for reading in the dialogue from Shakespeare plays
  and screenplays, which are formatted in very simple markup.
@@ -14,14 +16,14 @@ This is a helper function for reading in the dialogue from Shakespeare plays
  execrated in bulk. It can also be used to extract the dialogue of specific characters.
 
 
-## Usage
+### Usage
 
 ```r
 from_play(plays, extract = c("dialogue", "direction"))
 ```
 
 
-## Arguments
+### Arguments
 
 Argument      |Description
 ------------- |----------------
@@ -29,7 +31,7 @@ Argument      |Description
 `extract`     |     A character vector specifying what is to be extracted like 'dialogue' or 'romeo'.
 
 
-## Value
+### Value
 
 A readtext dataframe with the extracted text.
 

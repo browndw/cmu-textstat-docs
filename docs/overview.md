@@ -1,4 +1,4 @@
-## cmu.textstat
+# cmu.textstat
 
 The **cmu.textstat** package is for use in the **36-468/668** course (Special Topics in Statistics & Data Science) at Carnegie Mellon University.
 

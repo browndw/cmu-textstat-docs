@@ -3,11 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-cmu-textstat-docs
-=================
 
-This repository contains documentation for several packages developed for
-a text analysis course at Carnegie Mellon University.
+.. include:: overview.md
 
 
 .. toctree::
@@ -16,10 +13,6 @@ a text analysis course at Carnegie Mellon University.
 
    overview
    
-
-The following are links to the primary documentation for each package. Those
-wanting to use any one of these individual packages should follow the
-appropriate link.
 
 .. toctree::
    :maxdepth: 2
