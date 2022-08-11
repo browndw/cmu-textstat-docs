@@ -40,7 +40,7 @@ attributes(m)$group_means
 ## Functions
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 functions/functions.md
 ```
@@ -48,7 +48,7 @@ functions/functions.md
 ## Vignettes
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 vignettes/mda_introduction.md
 ```

@@ -289,7 +289,7 @@ The following table is adapted from one created by [Stefan Evert](https://www.rd
 ## Functions
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 functions/functions.md
 ```

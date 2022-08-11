@@ -37,7 +37,7 @@ xray_decade <- google_ngram(word_forms = c("x-ray", "x-rays"), variety = "gb", b
 ## Functions
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 functions/functions.md
 ```
@@ -45,7 +45,7 @@ functions/functions.md
 ## Vignettes
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 vignettes/ngramr_introduction.md
 ```

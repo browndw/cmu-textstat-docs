@@ -71,7 +71,7 @@ The primary functions included in quanteda.extras are listed in the table below,
 ## Functions
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 functions/functions.md
 ```
@@ -79,7 +79,7 @@ functions/functions.md
 ## Vignettes
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 vignettes/collocations_introduction.md
 vignettes/dispersions_introduction.md
