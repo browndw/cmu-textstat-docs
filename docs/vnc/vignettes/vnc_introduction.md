@@ -13,9 +13,7 @@ library(ggdendro)
 
 ## Check the data
 
-Let’s begin by looking at the frequencies of the bigram *witch hunt* and
-the plural *witch hunts*, which are available in the package data and
-come from Google Books.
+Let’s begin by looking at the frequencies of the bigram *witch hunt* and the plural *witch hunts*, which are available in the package data and come from Google Books.
 
 ``` r
 knitr::kable(witch_hunt, caption = "Data included with vnc package")
@@ -287,15 +285,9 @@ counts_permil
 
 The purpose of [Variability-Based Neighbor
 Clustering](https://www.oxfordhandbooks.com/view/10.1093/oxfordhb/9780199922765.001.0001/oxfordhb-9780199922765-e-14)
-is to divide the use of a word or phrase into historical periods based
-on changes in frequency. Rather than assuming that a year, decade, or
-other division is statistically meaningful, the algorithm clusters
-segments of time into periods.
+is to divide the use of a word or phrase into historical periods based on changes in frequency. Rather than assuming that a year, decade, or other division is statistically meaningful, the algorithm clusters segments of time into periods.
 
-For this to work, the time data that we input must be evenly spaced.
-There can’t be any gaps. In the data above, it is clear that there are
-many missing decades. If we tried to plot the data, a function called
-**is.sequence( )** would halt the process and produce an error.
+For this to work, the time data that we input must be evenly spaced. There can’t be any gaps. In the data above, it is clear that there are many missing decades. If we tried to plot the data, a function called `is.sequence()` would halt the process and produce an error.
 
 ``` r
 vnc_scree(witch_hunt$decade, witch_hunt$counts_permil, distance.measure = "sd")
@@ -316,20 +308,17 @@ wh_d <- witch_hunt %>%
 
 ## Generate a scree plot
 
-We will use the data to generate a scree plot. The platting function
-takes a vector of time intervals and a vector of values.
+We will use the data to generate a scree plot. The platting function takes a vector of time intervals and a vector of values.
 
 ``` r
 vnc_scree(wh_d$decade, wh_d$counts_permil, distance.measure = "sd")
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/vnc/vignettes/vnc_introduction_files/figure-gfm/scree_plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/vnc_introduction_files/figure-gfm/scree_plot-1.png)<!-- -->
 
 ## Generate an hclust object
 
-Next, we can generate an **hclust** object using the **vnc_clust( )**
-function. Like the **vnc_scree( )** function, it takes a vector of time
-intervals and a vector of values.
+Next, we can generate an **hclust** object using the `vnc_clust()` function. Like the `vnc_scree()` function, it takes a vector of time intervals and a vector of values.
 
 ``` r
 hc <- vnc_clust(wh_d$decade, wh_d$counts_permil, distance.measure = "sd")
@@ -343,28 +332,22 @@ A dendrogram can be plotted from the generated **hclust** object.
 plot(hc, hang = -1)
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/vnc/vignettes/vnc_introduction_files/figure-gfm/plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/vnc_introduction_files/figure-gfm/plot-1.png)<!-- -->
 
 ## Cut the dendrogram
 
-For the next step, we’ll cut the dendrogram into 3 clusters based on the
-output of the scree plot we that generated. Note that we’re storing the
-output into an object **cut_hc**.
+For the next step, we’ll cut the dendrogram into 3 clusters based on the output of the scree plot we that generated. Note that we’re storing the output into an object `cut_hc`.
 
 ``` r
 plot(hc, hang = -1)
 cut_hc <- rect.hclust(hc, k=3)
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/vnc/vignettes/vnc_introduction_files/figure-gfm/cut_plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/vnc_introduction_files/figure-gfm/cut_plot-1.png)<!-- -->
 
 ## Prepare data for fancier plotting
 
-We’ve already plotted our data with base R. However, if we want more
-control, we probably want to use **ggplot2**. To do that, we need to go
-through a couple of intermediate steps. First, convert the **cut_hc**
-object that we just generated into a data.frame and join that with our
-original **wh_d** data.
+We’ve already plotted our data with base R. However, if we want more control, we probably want to use **ggplot2**. To do that, we need to go through a couple of intermediate steps. First, convert the `cut_hc` object that we just generated into a data.frame and join that with our original `wh_d` data.
 
 ``` r
 clust_df <- data.frame(decade=as.numeric(names(unlist(cut_hc))),
@@ -520,29 +503,17 @@ clust_3
 </table>
 
 Next, we’ll convert our cluster data into dendrogram data using
-**as.dendrogram( )** from
-[**ggdendro**](https://cran.r-project.org/web/packages/ggdendro/vignettes/ggdendro.html).
-We also MUST maintain the order of our time series. There are a variety
-of ways of doing this, but
-[**dendextend**](https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html)
-has an easy function called **sort( )**. We’ll take the easy way!
+`as.dendrogram()` from [**ggdendro**](https://cran.r-project.org/web/packages/ggdendro/vignettes/ggdendro.html). We also MUST maintain the order of our time series. There are a variety of ways of doing this, but [**dendextend**](https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html)
+has an easy function called `sort()`. We’ll take the easy way!
 
-To get ggplot-friendly data, we have to transform it yet again… This
-time using the **ggdendro** package’s function **dendro_data( )**.
+To get ggplot-friendly data, we have to transform it yet again… This time using the **ggdendro** package’s function `dendro_data()`.
 
 ``` r
 dend <- as.dendrogram(hc) %>% sort
 dend_data <- dendro_data(dend, type = "rectangle")
 ```
 
-Now let’s do some fancy plotting! We’re going to combine the dendrogram
-and a time series line plot like Gries and Hilpert do on pg. 140 of
-their chapter on VNC. The first three lines pull data from **clust_df**
-for the line plot using the clusters to color each point according to
-group. The **geom_segment** pulls data from **dend_data** to build the
-dendrogram. For the tick marks we again pull from **dend_data** using
-the **x** column for the breaks and and the **label** column to label
-the breaks.
+Now let’s do some fancy plotting! We’re going to combine the dendrogram and a time series line plot like Gries and Hilpert do on pg. 140 of their chapter on VNC. The first three lines pull data from `clust_df` for the line plot using the clusters to color each point according to group. The `geom_segment` pulls data from `dend_data` to build the dendrogram. For the tick marks we again pull from `dend_data` using the **x** column for the breaks and and the **label** column to label the breaks.
 
 ``` r
 ggplot(clust_df, aes(x = as.numeric(rownames(clust_df)), y = counts_permil)) +
@@ -555,7 +526,7 @@ ggplot(clust_df, aes(x = as.numeric(rownames(clust_df)), y = counts_permil)) +
   theme_minimal()
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/vnc/vignettes/vnc_introduction_files/figure-gfm/ggdendro-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/vnc_introduction_files/figure-gfm/ggdendro-1.png)<!-- -->
 
 ## Bibliography
 
