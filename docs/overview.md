@@ -136,7 +136,7 @@ Many of the functions are designed to be used at the end of [a processing pipeli
 ## Functions
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 functions/functions.md
 ```
