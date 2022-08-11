@@ -364,7 +364,7 @@ calculated.
 screeplot_mda(d)
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/mda.biber/vignettes/mda_introduction_files/figure-gfm/scree_plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/mda_introduction_files/figure-gfm/scree_plot-1.png)<!-- -->
 
 ## Inspecting a correlation matrix
 
@@ -381,7 +381,7 @@ cor_m <- cor(d[,-1], method = "pearson")
 corrplot(cor_m, type = "upper", order = "hclust", tl.col = "black", tl.srt = 45, diag = F, tl.cex = 0.5)
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/mda.biber/vignettes/mda_introduction_files/figure-gfm/corr_plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/mda_introduction_files/figure-gfm/corr_plot-1.png)<!-- -->
 
 ## The **mda_loadings( )** function
 
@@ -701,7 +701,7 @@ code and customize your own plots.
 stickplot_mda(m, n_factor=1)
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/mda.biber/vignettes/mda_introduction_files/figure-gfm/stickplot_mda-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/mda_introduction_files/figure-gfm/stickplot_mda-1.png)<!-- -->
 
 Along this particular dimension, Philosophy is positioned at the extreme
 positive end, while History and various Engineering specialties are
@@ -714,7 +714,7 @@ of the relevant variables and their factor loadings.
 heatmap_mda(m, n_factor=1)
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/mda.biber/vignettes/mda_introduction_files/figure-gfm/heatmap_mda-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/mda_introduction_files/figure-gfm/heatmap_mda-1.png)<!-- -->
 
 The plot highlights the variables that contribute to the positive end of
 cline like adverbs, *to be* as a main verb, and first-person pronouns.
@@ -729,7 +729,7 @@ loadings and boxplots of the dimension scores organized by group.
 boxplot_mda(m, n_factor=1)
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/mda.biber/vignettes/mda_introduction_files/figure-gfm/boxplot_mda-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/mda_introduction_files/figure-gfm/boxplot_mda-1.png)<!-- -->
 
 ## Evaluating the dimensions
 
