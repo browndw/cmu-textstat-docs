@@ -11,7 +11,7 @@ a text analysis course at Carnegie Mellon University.
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Main Contents
 
    overview
@@ -22,7 +22,7 @@ wanting to use any one of these individual packages should follow the
 appropriate link.
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Packages
 
    mda.biber/mda.biber.md
