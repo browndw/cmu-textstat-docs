@@ -507,7 +507,7 @@ ggraph(net, weight = link_weight, layout = "stress") +
   theme(legend.position="none")
 ```
 
-![](/Users/davidwestbrown/Desktop/cmu-textstat-docs/quanteda.extras/vignettes/collocations_introduction_files/figure-gfm/net_plot-1.png)<!-- -->
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/collocations_introduction_files/figure-gfm/net_plot-1.png)<!-- -->
 
 ## Bibliography
 
