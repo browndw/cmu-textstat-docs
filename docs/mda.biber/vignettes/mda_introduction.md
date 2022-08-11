@@ -39,301 +39,25 @@ First, we inspect the data that comes with the package – counts of
 features tagged using the [psuedobibeR
 package](https://github.com/browndw/pseudobibeR).
 
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-doc_id
-</th>
-<th style="text-align:right;">
-f_01_past_tense
-</th>
-<th style="text-align:right;">
-f_02_perfect_aspect
-</th>
-<th style="text-align:right;">
-f_03_present_tense
-</th>
-<th style="text-align:right;">
-f_04_place_adverbials
-</th>
-<th style="text-align:right;">
-f_05_time_adverbials
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-BIO.G0.01.1.txt
-</td>
-<td style="text-align:right;">
-17.678709
-</td>
-<td style="text-align:right;">
-8.070715
-</td>
-<td style="text-align:right;">
-52.45965
-</td>
-<td style="text-align:right;">
-3.074558
-</td>
-<td style="text-align:right;">
-4.035357
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BIO.G0.02.1.txt
-</td>
-<td style="text-align:right;">
-11.477762
-</td>
-<td style="text-align:right;">
-10.043042
-</td>
-<td style="text-align:right;">
-61.33429
-</td>
-<td style="text-align:right;">
-2.152080
-</td>
-<td style="text-align:right;">
-6.097561
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BIO.G0.02.2.txt
-</td>
-<td style="text-align:right;">
-3.875969
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-<td style="text-align:right;">
-62.01550
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-<td style="text-align:right;">
-1.291990
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BIO.G0.02.3.txt
-</td>
-<td style="text-align:right;">
-1.700680
-</td>
-<td style="text-align:right;">
-3.401361
-</td>
-<td style="text-align:right;">
-64.62585
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BIO.G0.02.4.txt
-</td>
-<td style="text-align:right;">
-1.531394
-</td>
-<td style="text-align:right;">
-4.594181
-</td>
-<td style="text-align:right;">
-70.44410
-</td>
-<td style="text-align:right;">
-1.531394
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-BIO.G0.02.5.txt
-</td>
-<td style="text-align:right;">
-14.844804
-</td>
-<td style="text-align:right;">
-7.759784
-</td>
-<td style="text-align:right;">
-47.57085
-</td>
-<td style="text-align:right;">
-3.373819
-</td>
-<td style="text-align:right;">
-2.024291
-</td>
-</tr>
-</tbody>
-</table>
+| doc_id          | f\_01\_past\_tense | f\_02\_perfect\_aspect | f\_03\_present\_tense | f\_04\_place\_adverbials | f\_05\_time\_adverbials |
+|-----------------|-----------------|---------------------|--------------------|-----------------------|----------------------|
+| BIO.G0.01.1.txt | 17.678709       | 8.070715            | 52.45965           | 3.074558              | 4.035357             |
+| BIO.G0.02.1.txt | 11.477762       | 10.043042           | 61.33429           | 2.152080              | 6.097561             |
+| BIO.G0.02.2.txt | 3.875969        | 0.000000            | 62.01550           | 0.000000              | 1.291990             |
+| BIO.G0.02.3.txt | 1.700680        | 3.401361            | 64.62585           | 0.000000              | 0.000000             |
+| BIO.G0.02.4.txt | 1.531394        | 4.594181            | 70.44410           | 1.531394              | 0.000000             |
+| BIO.G0.02.5.txt | 14.844804       | 7.759784            | 47.57085           | 3.373819              | 2.024291             |
 
 \[…\]
 
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-f_62_split_infinitve
-</th>
-<th style="text-align:right;">
-f_63_split_auxiliary
-</th>
-<th style="text-align:right;">
-f_64_phrasal_coordination
-</th>
-<th style="text-align:right;">
-f_65_clausal_coordination
-</th>
-<th style="text-align:right;">
-f_66_neg_synthetic
-</th>
-<th style="text-align:right;">
-f_67_neg_analytic
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-0.1921599
-</td>
-<td style="text-align:right;">
-4.611837
-</td>
-<td style="text-align:right;">
-8.262875
-</td>
-<td style="text-align:right;">
-5.956956
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-4.227517
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-0.7173601
-</td>
-<td style="text-align:right;">
-5.021521
-</td>
-<td style="text-align:right;">
-6.097561
-</td>
-<td style="text-align:right;">
-3.945481
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-2.869441
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-0.0000000
-</td>
-<td style="text-align:right;">
-3.875969
-</td>
-<td style="text-align:right;">
-6.459948
-</td>
-<td style="text-align:right;">
-1.291990
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-3.875969
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-0.0000000
-</td>
-<td style="text-align:right;">
-1.700680
-</td>
-<td style="text-align:right;">
-18.707483
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-3.0627871
-</td>
-<td style="text-align:right;">
-6.125574
-</td>
-<td style="text-align:right;">
-7.656968
-</td>
-<td style="text-align:right;">
-0.000000
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-7.656968
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-0.6747638
-</td>
-<td style="text-align:right;">
-4.723347
-</td>
-<td style="text-align:right;">
-3.036437
-</td>
-<td style="text-align:right;">
-1.686910
-</td>
-<td style="text-align:right;">
-0
-</td>
-<td style="text-align:right;">
-5.398111
-</td>
-</tr>
-</tbody>
-</table>
+| f\_62\_split\_infinitve | f\_63\_split\_auxiliary | f\_64\_phrasal\_coordination | f\_65\_clausal\_coordination | f\_66\_neg\_synthetic | f\_67\_neg\_analytic |
+|----------------------|----------------------|---------------------------|---------------------------|--------------------|-------------------|
+| 0.1921599            | 4.611837             | 8.262875                  | 5.956956                  | 0                  | 4.227517          |
+| 0.7173601            | 5.021521             | 6.097561                  | 3.945481                  | 0                  | 2.869441          |
+| 0.0000000            | 3.875969             | 6.459948                  | 1.291990                  | 0                  | 3.875969          |
+| 0.0000000            | 1.700680             | 18.707483                 | 0.000000                  | 0                  | 0.000000          |
+| 3.0627871            | 6.125574             | 7.656968                  | 0.000000                  | 0                  | 7.656968          |
+| 0.6747638            | 4.723347             | 3.036437                  | 1.686910                  | 0                  | 5.39811           |
 
 Note that the first column is the name of a document from the [Michigan
 Corpus of Upper-Level Student Papers
@@ -429,89 +153,15 @@ attributes.
 attributes(m)$group_means
 ```
 
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-group
-</th>
-<th style="text-align:right;">
-Factor1
-</th>
-<th style="text-align:right;">
-Factor2
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-BIO
-</td>
-<td style="text-align:right;">
--7.2662917
-</td>
-<td style="text-align:right;">
--0.5964011
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-CEE
-</td>
-<td style="text-align:right;">
--9.7881051
-</td>
-<td style="text-align:right;">
--0.1625027
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-CLS
-</td>
-<td style="text-align:right;">
-0.9138877
-</td>
-<td style="text-align:right;">
--0.5898260
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ECO
-</td>
-<td style="text-align:right;">
--5.4596175
-</td>
-<td style="text-align:right;">
-0.3063591
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-EDU
-</td>
-<td style="text-align:right;">
-5.5817808
-</td>
-<td style="text-align:right;">
--0.7646039
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-ENG
-</td>
-<td style="text-align:right;">
-8.6689423
-</td>
-<td style="text-align:right;">
-1.0436717
-</td>
-</tr>
-</tbody>
-</table>
+| group | Factor1    | Factor2    |
+|-------|------------|------------|
+| BIO   | -7.2662917 | -0.5964011 |
+| CEE   | -9.7881051 | -0.1625027 |
+| CLS   | 0.9138877  | -0.5898260 |
+| ECO   | -5.4596175 | 0.3063591  |
+| EDU   | 5.5817808  | -0.7646039 |
+| ENG   | 8.6689423  | 1.0436717  |
+
 
 ### Factor loadings
 
@@ -519,174 +169,26 @@ ENG
 attributes(m)$loadings %>% arrange(-Factor1)
 ```
 
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-Factor1
-</th>
-<th style="text-align:right;">
-Factor2
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-f_42_adverbs
-</td>
-<td style="text-align:right;">
-0.7032851
-</td>
-<td style="text-align:right;">
-0.1006736
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_65_clausal_coordination
-</td>
-<td style="text-align:right;">
-0.6562988
-</td>
-<td style="text-align:right;">
--0.0899704
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_67_neg_analytic
-</td>
-<td style="text-align:right;">
-0.6549001
-</td>
-<td style="text-align:right;">
-0.0748763
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_19_be_main_verb
-</td>
-<td style="text-align:right;">
-0.6540826
-</td>
-<td style="text-align:right;">
-0.0730070
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_11_indefinite_pronouns
-</td>
-<td style="text-align:right;">
-0.6371959
-</td>
-<td style="text-align:right;">
-0.0135475
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_06_first_person_pronouns
-</td>
-<td style="text-align:right;">
-0.5876115
-</td>
-<td style="text-align:right;">
--0.2495020
-</td>
-</tr>
-</tbody>
-</table>
+
+|                      | Factor1   | Factor2    |
+|----------------------------|-----------|------------|
+| f\_42\_adverbs               | 0.7032851 | 0.1006736  |
+| f\_65\_clausal_coordination  | 0.6562988 | -0.0899704 |
+| f\_67\_neg_analytic          | 0.6549001 | 0.0748763  |
+| f\_19\_be_main_verb          | 0.6540826 | 0.0730070  |
+| f\_11\_indefinite_pronouns   | 0.6371959 | 0.0135475  |
+| f\_06\_first\_person_pronouns | 0.5876115 | -0.2495020 |
 
 \[…\]
 
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:right;">
-Factor1
-</th>
-<th style="text-align:right;">
-Factor2
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-f_14_nominalizations
-</td>
-<td style="text-align:right;">
--0.3921936
-</td>
-<td style="text-align:right;">
-0.1912403
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_27_past_participle_whiz
-</td>
-<td style="text-align:right;">
--0.4121017
-</td>
-<td style="text-align:right;">
--0.1071897
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_39_prepositions
-</td>
-<td style="text-align:right;">
--0.4465220
-</td>
-<td style="text-align:right;">
-0.0176608
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_40_adj_attr
-</td>
-<td style="text-align:right;">
--0.5517525
-</td>
-<td style="text-align:right;">
-0.1099862
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_44_mean_word_length
-</td>
-<td style="text-align:right;">
--0.6853363
-</td>
-<td style="text-align:right;">
-0.0966360
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-f_16_other_nouns
-</td>
-<td style="text-align:right;">
--0.7416364
-</td>
-<td style="text-align:right;">
--0.0990779
-</td>
-</tr>
-</tbody>
-</table>
-
+|                         | Factor1    | Factor2    |
+|-------------------------------|------------|------------|
+| f\_14\_nominalizations        | -0.3921936 | 0.1912403  |
+| f\_27\_past\_participle\_whiz | -0.4121017 | -0.1071897 |
+| f\_39\_prepositions           | -0.4465220 | 0.0176608  |
+| f\_40\_adj\_attr              | -0.5517525 | 0.1099862  |
+| f\_44\_mean\_word\_length     | -0.6853363 | 0.0966360  |
+| f\_16\_other\_nouns           | -0.7416364 | -0.0990779 |
 ## Ploting the results
 
 One conventional way of plotting the results is to [place the means
@@ -764,164 +266,11 @@ And output the results:
 kable(anova_results)
 ```
 
-<table>
-<thead>
-<tr>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-Dimension 1
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-Dimension 2
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-<th style="text-align:left;">
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left;">
-</td>
-<td style="text-align:left;">
-DF
-</td>
-<td style="text-align:left;">
-Sum Sq
-</td>
-<td style="text-align:left;">
-Mean Sq
-</td>
-<td style="text-align:left;">
-F value
-</td>
-<td style="text-align:left;">
-Pr(\>F)
-</td>
-<td style="text-align:left;">
-*R*<sup>2</sup>
-</td>
-<td style="text-align:left;">
-DF
-</td>
-<td style="text-align:left;">
-Sum Sq
-</td>
-<td style="text-align:left;">
-Mean Sq
-</td>
-<td style="text-align:left;">
-F value
-</td>
-<td style="text-align:left;">
-Pr(\>F)
-</td>
-<td style="text-align:left;">
-*R*<sup>2</sup>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-group
-</td>
-<td style="text-align:left;">
-16
-</td>
-<td style="text-align:left;">
-57132.78
-</td>
-<td style="text-align:left;">
-3570.8
-</td>
-<td style="text-align:left;">
-30.04
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-37.21
-</td>
-<td style="text-align:left;">
-16
-</td>
-<td style="text-align:left;">
-615.63
-</td>
-<td style="text-align:left;">
-38.48
-</td>
-<td style="text-align:left;">
-14.22
-</td>
-<td style="text-align:left;">
-0
-</td>
-<td style="text-align:left;">
-21.91
-</td>
-</tr>
-<tr>
-<td style="text-align:left;">
-Residuals
-</td>
-<td style="text-align:left;">
-811
-</td>
-<td style="text-align:left;">
-96414.81
-</td>
-<td style="text-align:left;">
-118.88
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-811
-</td>
-<td style="text-align:left;">
-2194.8
-</td>
-<td style="text-align:left;">
-2.71
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-<td style="text-align:left;">
-–
-</td>
-</tr>
-</tbody>
-</table>
+| –         | Dimension 1 | –        | –       | –       | –       | –     | Dimension 2 | –      | –       | –       | –       | –     |
+|-----------|-------------|----------|---------|---------|---------|-------|-------------|--------|---------|---------|---------|-------|
+| –         | DF          | Sum Sq   | Mean Sq | F value | Pr(\>F) | *R*<sup>2</sup>  | DF          | Sum Sq | Mean Sq | F value | Pr(\>F) | *R*<sup>2</sup>  |
+| group     | 16          | 57132.78 | 3570.8  | 30.04   | 0       | 37.21 | 16          | 615.63 | 38.48   | 14.22   | 0       | 21.91 |
+| Residuals | 811         | 96414.81 | 118.88  | –       | –       | –     | 811         | 2194.8 | 2.71    | –       | –       | –     |
 
 ## Bibliography
 
