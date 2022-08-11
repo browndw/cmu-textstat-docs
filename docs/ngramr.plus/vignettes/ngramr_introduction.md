@@ -22,110 +22,14 @@ z_year <- google_ngram(word_forms = "zinger", variety = "us", by = "year")
 
 Check the data:
 
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-Year
-</th>
-<th style="text-align:right;">
-AF
-</th>
-<th style="text-align:right;">
-Total
-</th>
-<th style="text-align:right;">
-Per_10.6
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1834
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-160777483
-</td>
-<td style="text-align:right;">
-0.0186593
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1835
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-213225556
-</td>
-<td style="text-align:right;">
-0.0140696
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1837
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-178891779
-</td>
-<td style="text-align:right;">
-0.0055900
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1857
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-426434283
-</td>
-<td style="text-align:right;">
-0.0070351
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1859
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-442579354
-</td>
-<td style="text-align:right;">
-0.0022595
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1860
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-455087035
-</td>
-<td style="text-align:right;">
-0.0043948
-</td>
-</tr>
-</tbody>
-</table>
+| Year | AF | Total     | Per_10.6  |
+|------|----|-----------|-----------|
+| 1834 | 3  | 160777483 | 0.0186593 |
+| 1835 | 3  | 213225556 | 0.0140696 |
+| 1837 | 1  | 178891779 | 0.0055900 |
+| 1857 | 3  | 426434283 | 0.0070351 |
+| 1859 | 1  | 442579354 | 0.0022595 |
+| 1860 | 2  | 455087035 | 0.004394  |
 
 In current usage, *zinger* denotes a kind of cutting quip. Its [supposed
 origin](https://www.etymonline.com/word/zinger) is as a baseball term
@@ -167,110 +71,14 @@ z_decade <- google_ngram(word_forms = c("zinger", "zingers"), variety = "gb", by
 
 Check the data:
 
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-Decade
-</th>
-<th style="text-align:right;">
-AF
-</th>
-<th style="text-align:right;">
-Total
-</th>
-<th style="text-align:right;">
-Per_10.6
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1780
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-374630337
-</td>
-<td style="text-align:right;">
-0.0053386
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1800
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1302698028
-</td>
-<td style="text-align:right;">
-0.0007676
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1810
-</td>
-<td style="text-align:right;">
-12
-</td>
-<td style="text-align:right;">
-1802397035
-</td>
-<td style="text-align:right;">
-0.0066578
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1820
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-2558079128
-</td>
-<td style="text-align:right;">
-0.0011728
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1830
-</td>
-<td style="text-align:right;">
-6
-</td>
-<td style="text-align:right;">
-2954836522
-</td>
-<td style="text-align:right;">
-0.0020306
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1840
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-3547747138
-</td>
-<td style="text-align:right;">
-0.0008456
-</td>
-</tr>
-</tbody>
-</table>
+| Decade | AF | Total      | Per_10.6  |
+|--------|----|------------|-----------|
+| 1780   | 2  | 374630337  | 0.0053386 |
+| 1800   | 1  | 1302698028 | 0.0007676 |
+| 1810   | 12 | 1802397035 | 0.0066578 |
+| 1820   | 3  | 2558079128 | 0.0011728 |
+| 1830   | 6  | 2954836522 | 0.0020306 |
+| 1840   | 3  | 3547747138 | 0.0008456 |
 
 ## Ploting the data
 
