@@ -22,22 +22,33 @@ The main parsing function requires text processed using either **udpipe** or **s
 library(udpipe)
 library(pseudobibeR)
 
-# for demonstration purposes, take the first 10 texts from data from cmu.textstat
-
+# For demonstration purposes, take the first 10 texts from data from cmu.textstat
 df <- cmu.textstat::micusp_mini[1:10,]
 
-# initialize the model
-# to download the model: udpipe_download_model(language = "english")
+# Initialize the model
+# To download the model: udpipe_download_model(language = "english")
 ud_model <- udpipe_load_model("english-ewt-ud-2.5-191206.udpipe")
 
-# parse the data
+# Parse the data
 micusp_prsd <- udpipe_annotate(ud_model, x = df$text, doc_id = df$doc_id)
 
-# convert to a data frame
+# Convert to a data frame
 micusp_prsd <- data.frame(micusp_prsd, stringsAsFactors = F)
 
-# parse the data
+# Aggregate the tags from dependency structures and parts-of-speech
 df_biber <- biber_udpipe(micusp_prsd)
+
+```
+
+### With spacyr
+
+```{note}
+
+Unlike **udpipe**, **spacyr** is not a native R package. It installs a conda virtual environment (called **spacy_condaenv**) and uses [reticulate](https://rstudio.github.io/reticulate/) to interface with Python.
+
+Thus, parsing data with a spaCy model from R requires a potentially more complicated installation.
+
+However, spaCy is more robust and flexible model than udpipe (though not necessarily more accurate). If you are familiar and comfortable with Python, it may be worth your time. Otherwise, udpipe provides a robust native R alternative.
 
 ```
 
@@ -47,16 +58,20 @@ library(pseudobibeR)
 
 spacy_initialize()
 
-# The package comes loaded with a small corpus, micusp_mini.
-# Here we will take the first 10 texts and create a quanteda corpus object.
-micusp_corpus <- quanteda::corpus(micusp_mini[1:10,])
+# For demonstration purposes, take the first 10 texts from data from cmu.textstat
+df <- cmu.textstat::micusp_mini[1:10,]
 
-# Parse using spacyr; note that we need dependency set to TRUE.
+# Create a corpus object
+micusp_corpus <- quanteda::corpus(df])
+
+# Parse using spaCy; note that we need dependency set to TRUE.
 micusp_prsd <- spacy_parse(micusp_corpus, pos = T, tag = T, dependency = T, entity = F)
 
-# Aggregate the features into a data.frame.
-df_biber <- biber_parse(micusp_prsd)
+# # Aggregate the tags from dependency structures and parts-of-speech
+df_biber <- biber_spacy(micusp_prsd)
 ```
+
+## Categories
 
 The following table is adapted from one created by [Stefan Evert](https://www.rdocumentation.org/packages/corpora/versions/0.5/topics/BNCbiber).
 
