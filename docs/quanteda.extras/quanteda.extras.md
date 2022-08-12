@@ -1,4 +1,4 @@
-## quanteda.extras
+# quanteda.extras
 
 This package contains statstical and plotting tools that expand the functionality of [quanteda](http://quanteda.io/). These include functions for calculating:
 
@@ -25,7 +25,7 @@ As the name of the package suggests, many of the functions take outputs produced
 ## Functions
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 functions/functions.md
 ```
@@ -33,7 +33,7 @@ functions/functions.md
 ## Vignettes
 
 ```{toctree}
-:maxdepth: 1
+:maxdepth: 2
 
 vignettes/collocations_introduction.md
 vignettes/dispersions_introduction.md
