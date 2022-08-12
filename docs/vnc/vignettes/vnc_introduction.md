@@ -19,267 +19,25 @@ Let’s begin by looking at the frequencies of the bigram *witch hunt* and the p
 knitr::kable(witch_hunt, caption = "Data included with vnc package")
 ```
 
-<table>
-<caption>
-Data included with vnc package
-</caption>
-<thead>
-<tr>
-<th style="text-align:right;">
-decade
-</th>
-<th style="text-align:right;">
-token_count
-</th>
-<th style="text-align:right;">
-total_count
-</th>
-<th style="text-align:right;">
-counts_permil
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1600
-</td>
-<td style="text-align:right;">
-3
-</td>
-<td style="text-align:right;">
-1585485
-</td>
-<td style="text-align:right;">
-1.89
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1680
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-1945902
-</td>
-<td style="text-align:right;">
-0.51
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1810
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-499552970
-</td>
-<td style="text-align:right;">
-0.01
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1860
-</td>
-<td style="text-align:right;">
-1
-</td>
-<td style="text-align:right;">
-3247012381
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1880
-</td>
-<td style="text-align:right;">
-2
-</td>
-<td style="text-align:right;">
-6267570245
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1890
-</td>
-<td style="text-align:right;">
-4
-</td>
-<td style="text-align:right;">
-8293033235
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1900
-</td>
-<td style="text-align:right;">
-26
-</td>
-<td style="text-align:right;">
-11103867317
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1910
-</td>
-<td style="text-align:right;">
-21
-</td>
-<td style="text-align:right;">
-11777942915
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1920
-</td>
-<td style="text-align:right;">
-55
-</td>
-<td style="text-align:right;">
-9964203621
-</td>
-<td style="text-align:right;">
-0.01
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1930
-</td>
-<td style="text-align:right;">
-199
-</td>
-<td style="text-align:right;">
-9067323416
-</td>
-<td style="text-align:right;">
-0.02
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1940
-</td>
-<td style="text-align:right;">
-948
-</td>
-<td style="text-align:right;">
-9673970472
-</td>
-<td style="text-align:right;">
-0.10
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1950
-</td>
-<td style="text-align:right;">
-2639
-</td>
-<td style="text-align:right;">
-13293905516
-</td>
-<td style="text-align:right;">
-0.20
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1960
-</td>
-<td style="text-align:right;">
-3906
-</td>
-<td style="text-align:right;">
-23660378418
-</td>
-<td style="text-align:right;">
-0.17
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1970
-</td>
-<td style="text-align:right;">
-6379
-</td>
-<td style="text-align:right;">
-29211995598
-</td>
-<td style="text-align:right;">
-0.22
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1980
-</td>
-<td style="text-align:right;">
-6786
-</td>
-<td style="text-align:right;">
-36463128334
-</td>
-<td style="text-align:right;">
-0.19
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1990
-</td>
-<td style="text-align:right;">
-15064
-</td>
-<td style="text-align:right;">
-58099277939
-</td>
-<td style="text-align:right;">
-0.26
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2000
-</td>
-<td style="text-align:right;">
-29775
-</td>
-<td style="text-align:right;">
-111276927919
-</td>
-<td style="text-align:right;">
-0.27
-</td>
-</tr>
-</tbody>
-</table>
+| decade | token_count | total_count  | counts_permil |
+|--------|-------------|--------------|---------------|
+| 1600   | 3           | 1585485      | 1.89          |
+| 1680   | 1           | 1945902      | 0.51          |
+| 1810   | 4           | 499552970    | 0.01          |
+| 1860   | 1           | 3247012381   | 0.00          |
+| 1880   | 2           | 6267570245   | 0.00          |
+| 1890   | 4           | 8293033235   | 0.00          |
+| 1900   | 26          | 11103867317  | 0.00          |
+| 1910   | 21          | 11777942915  | 0.00          |
+| 1920   | 55          | 9964203621   | 0.01          |
+| 1930   | 199         | 9067323416   | 0.02          |
+| 1940   | 948         | 9673970472   | 0.10          |
+| 1950   | 2639        | 13293905516  | 0.20          |
+| 1960   | 3906        | 23660378418  | 0.17          |
+| 1970   | 6379        | 29211995598  | 0.22          |
+| 1980   | 6786        | 36463128334  | 0.19          |
+| 1990   | 15064       | 58099277939  | 0.26          |
+| 2000   | 29775       | 111276927919 | 0.27          |
 
 ## Periodization
 
@@ -363,144 +121,19 @@ And check the result…
 knitr::kable(clust_df)
 ```
 
-<table>
-<thead>
-<tr>
-<th style="text-align:right;">
-decade
-</th>
-<th style="text-align:left;">
-clust
-</th>
-<th style="text-align:right;">
-counts_permil
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:right;">
-1900
-</td>
-<td style="text-align:left;">
-clust_1
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1910
-</td>
-<td style="text-align:left;">
-clust_1
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1920
-</td>
-<td style="text-align:left;">
-clust_1
-</td>
-<td style="text-align:right;">
-0.01
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1930
-</td>
-<td style="text-align:left;">
-clust_1
-</td>
-<td style="text-align:right;">
-0.02
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1940
-</td>
-<td style="text-align:left;">
-clust_2
-</td>
-<td style="text-align:right;">
-0.10
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1950
-</td>
-<td style="text-align:left;">
-clust_3
-</td>
-<td style="text-align:right;">
-0.20
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1960
-</td>
-<td style="text-align:left;">
-clust_3
-</td>
-<td style="text-align:right;">
-0.17
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1970
-</td>
-<td style="text-align:left;">
-clust_3
-</td>
-<td style="text-align:right;">
-0.22
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1980
-</td>
-<td style="text-align:left;">
-clust_3
-</td>
-<td style="text-align:right;">
-0.19
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-1990
-</td>
-<td style="text-align:left;">
-clust_3
-</td>
-<td style="text-align:right;">
-0.26
-</td>
-</tr>
-<tr>
-<td style="text-align:right;">
-2000
-</td>
-<td style="text-align:left;">
-clust_3
-</td>
-<td style="text-align:right;">
-0.27
-</td>
-</tr>
-</tbody>
-</table>
+| decade | clust   | counts_permil |
+|--------|---------|---------------|
+| 1900   | clust_1 | 0.00          |
+| 1910   | clust_1 | 0.00          |
+| 1920   | clust_1 | 0.01          |
+| 1930   | clust_1 | 0.02          |
+| 1940   | clust_2 | 0.10          |
+| 1950   | clust_3 | 0.20          |
+| 1960   | clust_3 | 0.17          |
+| 1970   | clust_3 | 0.22          |
+| 1980   | clust_3 | 0.19          |
+| 1990   | clust_3 | 0.26          |
+| 2000   | clust_3 | 0.27          |
 
 Next, we’ll convert our cluster data into dendrogram data using
 `as.dendrogram()` from [**ggdendro**](https://cran.r-project.org/web/packages/ggdendro/vignettes/ggdendro.html). We also MUST maintain the order of our time series. There are a variety of ways of doing this, but [**dendextend**](https://cran.r-project.org/web/packages/dendextend/vignettes/dendextend.html)
