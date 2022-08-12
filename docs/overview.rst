@@ -60,8 +60,7 @@ and tokenization.
 Functions
 ---------
 
-.. code:: {toctree}
-
+.. toctree::
    :maxdepth: 2
 
    functions/functions.md
