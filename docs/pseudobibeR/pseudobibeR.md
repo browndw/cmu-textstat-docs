@@ -35,256 +35,91 @@ df_biber <- biber_parse(micusp_prsd)
 
 The following table is adapted from one created by [Stefan Evert](https://www.rdocumentation.org/packages/corpora/versions/0.5/topics/BNCbiber).
 
-<table><tbody><tr><td>
-     </td>
-<td> <b>A. Tense and aspect markers</b> </td>
-</tr><tr><td>
-     <code>f_01_past_tense</code> </td>
-<td> Past tense </td>
-</tr><tr><td>
-     <code>f_02_perfect_aspect</code> </td>
-<td> Perfect aspect </td>
-</tr><tr><td>
-     <code>f_03_present_tense</code> </td>
-<td> Present tense </td>
-</tr><tr><td>
-     </td>
-<td> <b>B. Place and time adverbials</b> </td>
-</tr><tr><td>
-     <code>f_04_place_adverbials</code> </td>
-<td> Place adverbials (e.g., <em>above, beside, outdoors</em>) </td>
-</tr><tr><td>
-     <code>f_05_time_adverbials</code> </td>
-<td> Time adverbials (e.g., <em>early, instantly, soon</em>) </td>
-</tr><tr><td>
-     </td>
-<td> <b>C. Pronouns and pro-verbs</b> </td>
-</tr><tr><td>
-     <code>f_06_first_person_pronouns</code> </td>
-<td> First-person pronouns </td>
-</tr><tr><td>
-     <code>f_07_second_person_pronouns</code> </td>
-<td> Second-person pronouns </td>
-</tr><tr><td>
-     <code>f_08_third_person_pronouns</code> </td>
-<td> Third-person personal pronouns (excluding <em>it</em>) </td>
-</tr><tr><td>
-     <code>f_09_pronoun_it</code> </td>
-<td> Pronoun <em>it</em> </td>
-</tr><tr><td>
-     <code>f_10_demonstrative_pronoun</code> </td>
-<td> Demonstrative pronouns (<em>that, this, these, those</em> as pronouns) </td>
-</tr><tr><td>
-     <code>f_11_indefinite_pronoun</code> </td>
-<td> Indefinite pronounes (e.g., <em>anybody, nothing, someone</em>) </td>
-</tr><tr><td>
-     <code>f_12_proverb_do</code> </td>
-<td> Pro-verb <em>do</em> </td>
-</tr><tr><td>
-     </td>
-<td> <b>D. Questions</b> </td>
-</tr><tr><td>
-     <code>f_13_wh_question</code> </td>
-<td> Direct <em>wh</em>-questions </td>
-</tr><tr><td>
-     </td>
-<td> <b>E. Nominal forms</b> </td>
-</tr><tr><td>
-     <code>f_14_nominalization</code> </td>
-<td> Nominalizations (ending in <em>-tion, -ment, -ness, -ity</em>) </td>
-</tr><tr><td>
-     <code>f_15_gerunds</code> </td>
-<td> Gerunds (participial forms functioning as nouns) </td>
-</tr><tr><td>
-     <code>f_16_other_nouns</code> </td>
-<td> Total other nouns </td>
-</tr><tr><td>
-     </td>
-<td> <b>F. Passives</b> </td>
-</tr><tr><td>
-     <code>f_17_agentless_passives</code> </td>
-<td> Agentless passives </td>
-</tr><tr><td>
-     <code>f_18_by_passives</code> </td>
-<td> <em>by</em>-passives </td>
-</tr><tr><td>
-     </td>
-<td> <b>G. Stative forms</b> </td>
-</tr><tr><td>
-     <code>f_19_be_main_verb</code> </td>
-<td> <em>be</em> as main verb </td>
-</tr><tr><td>
-     <code>f_20_existential_there</code> </td>
-<td> Existential <em>there</em> </td>
-</tr><tr><td>
-     </td>
-<td> <b>H. Subordination features</b> </td>
-</tr><tr><td>
-     <code>f_21_that_verb_comp</code> </td>
-<td> <em>that</em> verb complements (e.g., <em>I said that he went.</em>) </td>
-</tr><tr><td>
-     <code>f_22_that_adj_comp</code> </td>
-<td> <em>that</em> adjective complements (e.g., <em>I'm glad that you like it.</em>) </td>
-</tr><tr><td>
-     <code>f_23_wh_clause</code> </td>
-<td> <em>wh</em>-clauses (e.g., <em>I believed what he told me.</em>) </td>
-</tr><tr><td>
-     <code>f_24_infinitives</code> </td>
-<td> Infinitives </td>
-</tr><tr><td>
-     <code>f_25_present_participle</code> </td>
-<td> Present participial adverbial clauses (e.g., <em>Stuffing his mouth with cookies, Joe ran out the door.</em>) </td>
-</tr><tr><td>
-     <code>f_26_past_participle</code> </td>
-<td> Past participial adverbial clauses (e.g., <em>Built in a single week, the house would stand for fifty years.</em>) </td>
-</tr><tr><td>
-     <code>f_27_past_participle_whiz</code> </td>
-<td> Past participial postnominal (reduced relative) clauses (e.g., <em>the solution produced by this process</em>) </td>
-</tr><tr><td>
-     <code>f_28_present_participle_whiz</code> </td>
-<td> Present participial postnominal (reduced relative) clauses (e.g., <em>the event causing this decline</em>) </td>
-</tr><tr><td>
-     <code>f_29_that_subj</code> </td>
-<td> <em>that</em> relative clauses on subject position (e.g., <em>the dog that bit me</em>) </td>
-</tr><tr><td>
-     <code>f_30_that_obj</code> </td>
-<td> <em>that</em> relative clauses on object position (e.g., <em>the dog that I saw</em>) </td>
-</tr><tr><td>
-     <code>f_31_wh_subj</code> </td>
-<td> <em>wh</em> relatives on subject position (e.g., <em>the man who likes popcorn</em>) </td>
-</tr><tr><td>
-     <code>f_32_wh_obj</code> </td>
-<td> <em>wh</em> relatives on object position (e.g., <em>the man who Sally likes</em>) </td>
-</tr><tr><td>
-     <code>f_33_pied_piping</code> </td>
-<td> Pied-piping relative clauses (e.g., <em>the manner in which he was told</em>) </td>
-</tr><tr><td>
-     <code>f_34_sentence_relatives</code> </td>
-<td> Sentence relatives (e.g., <em>Bob likes fried mangoes, which is the most disgusting thing I've ever heard of.</em>) </td>
-</tr><tr><td>
-     <code>f_35_because</code> </td>
-<td> Causative adverbial subordinator (<em>because</em>) </td>
-</tr><tr><td>
-     <code>f_36_though</code> </td>
-<td> Concessive adverbial subordinators (<em>although, though</em>) </td>
-</tr><tr><td>
-     <code>f_37_if</code> </td>
-<td> Conditional adverbial subordinators (<em>if, unless</em>) </td>
-</tr><tr><td>
-     <code>f_38_other_adv_sub</code> </td>
-<td> Other adverbial subordinators (e.g., <em>since, while, whereas</em>) </td>
-</tr><tr><td>
-     </td>
-<td> <b>I. Prepositional phrases, adjectives and adverbs</b> </td>
-</tr><tr><td>
-     <code>f_39_prepositions</code> </td>
-<td> Total prepositional phrases </td>
-</tr><tr><td>
-     <code>f_40_adj_attr</code> </td>
-<td> Attributive adjectives (e.g., <em>the big horse</em>) </td>
-</tr><tr><td>
-     <code>f_41_adj_pred</code> </td>
-<td> Predicative adjectives (e.g., <em>The horse is big.</em>) </td>
-</tr><tr><td>
-     <code>f_42_adverbs</code> </td>
-<td> Total adverbs </td>
-</tr><tr><td>
-     </td>
-<td> <b>J. Lexical specificity</b> </td>
-</tr><tr><td>
-     <code>f_43_type_token</code> </td>
-<td> Type-token ratio (including punctuation)</td>
-</tr><tr><td>
-     <code>f_44_mean_word_length</code> </td>
-<td> Average word length (across tokens, excluding punctuation) </td>
-</tr><tr><td>
-     </td>
-<td> <b>K. Lexical classes</b> </td>
-</tr><tr><td>
-     <code>f_45_conjuncts</code> </td>
-<td> Conjuncts (e.g., <em>consequently, furthermore, however</em>) </td>
-</tr><tr><td>
-     <code>f_46_downtoners</code> </td>
-<td> Downtoners (e.g., <em>barely, nearly, slightly</em>) </td>
-</tr><tr><td>
-     <code>f_47_hedges</code> </td>
-<td> Hedges (e.g., <em>at about, something like, almost</em>) </td>
-</tr><tr><td>
-     <code>f_48_amplifiers</code> </td>
-<td> Amplifiers (e.g., <em>absolutely, extremely, perfectly</em>) </td>
-</tr><tr><td>
-     <code>f_49_emphatics</code> </td>
-<td> Emphatics (e.g., <em>a lot, for sure, really</em>) </td>
-</tr><tr><td>
-     <code>f_50_discourse_particles</code> </td>
-<td> Discourse particles (e.g., sentence-initial <em>well, now, anyway</em>) </td>
-</tr><tr><td>
-     <code>f_51_demonstratives</code> </td>
-<td> Demonstratives </td>
-</tr><tr><td>
-     </td>
-<td> <b>L. Modals</b> </td>
-</tr><tr><td>
-     <code>f_52_modal_possibility</code> </td>
-<td> Possibility modals (<em>can, may, might, could</em>) </td>
-</tr><tr><td>
-     <code>f_53_modal_necessity</code> </td>
-<td> Necessity modals (<em>ought, should, must</em>) </td>
-</tr><tr><td>
-     <code>f_54_modal_predictive</code> </td>
-<td> Predictive modals (<em>will, would, shall</em>) </td>
-</tr><tr><td>
-     </td>
-<td> <b>M. Specialized verb classes</b> </td>
-</tr><tr><td>
-     <code>f_55_verb_public</code> </td>
-<td> Public verbs (e.g., <em>assert, declare, mention</em>) </td>
-</tr><tr><td>
-     <code>f_56_verb_private</code> </td>
-<td> Private verbs (e.g., <em>assume, believe, doubt, know</em>) </td>
-</tr><tr><td>
-     <code>f_57_verb_suasive</code> </td>
-<td> Suasive verbs (e.g., <em>command, insist, propose</em>) </td>
-</tr><tr><td>
-     <code>f_58_verb_seem</code> </td>
-<td> <em>seem</em> and <em>appear</em> </td>
-</tr><tr><td>
-     </td>
-<td> <b>N. Reduced forms and dispreferred structures</b> </td>
-</tr><tr><td>
-     <code>f_59_contractions</code> </td>
-<td> Contractions </td>
-</tr><tr><td>               
-     <code>f_60_that_deletion</code> </td>
-<td> Subordinator <em>that</em> deletion (e.g., <em>I think [that] he went.</em>) </td>
-</tr><tr><td>
-     <code>f_61_stranded_preposition</code> </td>
-<td> Stranded prepositions (e.g., <em>the candidate that I was thinking of</em>) </td>
-</tr><tr><td>
-     <code>f_62_split_infinitve</code> </td>
-<td> Split infinitives (e.g., <em>He wants to convincingly prove that …</em>) </td>
-</tr><tr><td>
-     <code>f_63_split_auxiliary</code> </td>
-<td> Split auxiliaries (e.g., <em>They were apparently shown to …</em>) </td>
-</tr><tr><td>
-     </td>
-<td> <b>O. Co-ordination</b> </td>
-</tr><tr><td>
-     <code>f_64_phrasal_coordination</code> </td>
-<td> Phrasal co-ordination (N <em>and</em> N; Adj <em>and</em> Adj; V <em>and</em> V; Adv <em>and</em> Adv) </td>
-</tr><tr><td>
-     <code>f_65_clausal_coordination</code> </td>
-<td> Independent clause co-ordination (clause-initial <em>and</em>) </td>
-</tr><tr><td>
-     </td>
-<td> <b>P. Negation</b> </td>
-</tr><tr><td>
-     <code>f_66_neg_synthetic</code> </td>
-<td> Synthetic negation (e.g., <em>No answer is good enough for Jones.</em>) </td>
-</tr><tr><td>
-     <code>f_67_neg_analytic</code> </td>
-<td> Analytic negation (e.g., <em>That isn't good enough.</em>) </td>
-</tr></tbody></table>
+| Feature | Description           |
+|--------|------------------------|
+| - | **A. Tense and aspect markers** |
+| f\_01\_past\_tense | Past tense |
+| f\_02\_perfect\_aspect | Perfect aspect |
+| f\_03\_present\_tense | Present tense |
+| - | **B. Place and time adverbials** |
+| f\_04\_place\_adverbials | Place adverbials (e.g., above, beside, outdoors) |
+| f\_05\_time\_adverbials | Time adverbials (e.g., early, instantly, soon) |
+| - | **C. Pronouns and pro-verbs** |
+| f\_06\_first\_person\_pronouns | First-person pronouns |
+| f\_07\_second\_person\_pronouns | Second-person pronouns |
+| f\_08\_third\_person\_pronouns | Third-person personal pronouns (excluding it) |
+| f\_09\_pronoun\_it | Pronoun it |
+| f\_10\_demonstrative\_pronoun | Demonstrative pronouns (that, this, these, those as pronouns) |
+| f\_11\_indefinite\_pronoun | Indefinite pronounes (e.g., anybody, nothing, someone) |
+| f\_12\_proverb\_do | Pro-verb do |
+| - | **D. Questions** |
+| f\_13\_wh\_question | Direct wh-questions |
+| - | **E. Nominal forms** |
+| f\_14\_nominalization | Nominalizations (ending in -tion, -ment, -ness, -ity) |
+| f\_15\_gerunds | Gerunds (participial forms functioning as nouns) |
+| f\_16\_other\_nouns | Total other nouns |
+| - | **F. Passives** |
+| f\_17\_agentless\_passives | Agentless passives |
+| f\_18\_by\_passives | by-passives |
+| - | **G. Stative forms** |
+| f\_19\_be\_main\_verb | be as main verb |
+| f\_20\_existential\_there | Existential there |
+| - | **H. Subordination features** |
+| f\_21\_that\_verb\_comp | that verb complements (e.g., I said that he went.) |
+| f\_22\_that\_adj\_comp | that adjective complements (e.g., I'm glad that you like it.) |
+| f\_23\_wh\_clause | wh-clauses (e.g., I believed what he told me.) |
+| f\_24\_infinitives | Infinitives |
+| f\_25\_present\_participle | Present participial adverbial clauses (e.g., Stuffing his mouth with cookies, Joe ran out the door.) |
+| f\_26\_past\_participle | Past participial adverbial clauses (e.g., Built in a single week, the house would stand for fifty years.) |
+| f\_27\_past\_participle\_whiz | Past participial postnominal (reduced relative) clauses (e.g., the solution produced by this process) |
+| f\_28\_present\_participle\_whiz | Present participial postnominal (reduced relative) clauses (e.g., the event causing this decline) |
+| f\_29\_that\_subj | that relative clauses on subject position (e.g., the dog that bit me) |
+| f\_30\_that\_obj | that relative clauses on object position (e.g., the dog that I saw) |
+| f\_31\_wh\_subj | wh relatives on subject position (e.g., the man who likes popcorn) |
+| f\_32\_wh\_obj | wh relatives on object position (e.g., the man who Sally likes) |
+| f\_33\_pied\_piping | Pied-piping relative clauses (e.g., the manner in which he was told) |
+| f\_34\_sentence\_relatives | Sentence relatives (e.g., Bob likes fried mangoes, which is the most disgusting thing I've ever heard of.) |
+| f\_35\_because | Causative adverbial subordinator (because) |
+| f\_36\_though | Concessive adverbial subordinators (although, though) |
+| f\_37\_if | Conditional adverbial subordinators (if, unless) |
+| f\_38\_other\_adv\_sub | Other adverbial subordinators (e.g., since, while, whereas) |
+| - | **I. Prepositional phrases, adjectives and adverbs** |
+| f\_39\_prepositions | Total prepositional phrases |
+| f\_40\_adj\_attr | Attributive adjectives (e.g., the big horse) |
+| f\_41\_adj\_pred | Predicative adjectives (e.g., The horse is big.) |
+| f\_42\_adverbs | Total adverbs |
+| - | **J. Lexical specificity** |
+| f\_43\_type\_token | Type-token ratio (including punctuation) |
+| f\_44\_mean\_word\_length | Average word length (across tokens, excluding punctuation) |
+| - | **K. Lexical classes** |
+| f\_45\_conjuncts | Conjuncts (e.g., consequently, furthermore, however) |
+| f\_46\_downtoners | Downtoners (e.g., barely, nearly, slightly) |
+| f\_47\_hedges | Hedges (e.g., at about, something like, almost) |
+| f\_48\_amplifiers | Amplifiers (e.g., absolutely, extremely, perfectly) |
+| f\_49\_emphatics | Emphatics (e.g., a lot, for sure, really) |
+| f\_50\_discourse\_particles | Discourse particles (e.g., sentence-initial well, now, anyway) |
+| f\_51\_demonstratives | Demonstratives |
+| - | **L. Modals** |
+| f\_52\_modal\_possibility | Possibility modals (can, may, might, could) |
+| f\_53\_modal\_necessity | Necessity modals (ought, should, must) |
+| f\_54\_modal\_predictive | Predictive modals (will, would, shall) |
+| - | **M. Specialized verb classes** |
+| f\_55\_verb\_public | Public verbs (e.g., assert, declare, mention) |
+| f\_56\_verb\_private | Private verbs (e.g., assume, believe, doubt, know) |
+| f\_57\_verb\_suasive | Suasive verbs (e.g., command, insist, propose) |
+| f\_58\_verb\_seem | seem and appear |
+| - | **N. Reduced forms and dispreferred structures** |
+| f\_59\_contractions | Contractions |
+| f\_60\_that\_deletion | Subordinator that deletion (e.g., I think [that] he went.) |
+| f\_61\_stranded\_preposition | Stranded prepositions (e.g., the candidate that I was thinking of) |
+| f\_62\_split\_infinitve | Split infinitives (e.g., He wants to convincingly prove that …) |
+| f\_63\_split\_auxiliary | Split auxiliaries (e.g., They were apparently shown to …) |
+| - | **O. Co-ordination** |
+| f\_64\_phrasal\_coordination | Phrasal co-ordination (N and N; Adj and Adj; V and V; Adv and Adv) |
+| f\_65\_clausal\_coordination | Independent clause co-ordination (clause-initial and) |
+| - | **P. Negation** |
+| f\_66\_neg\_synthetic | Synthetic negation (e.g., No answer is good enough for Jones.) |
+| f\_67\_neg\_analytic | Analytic negation (e.g., That isn't good enough.) |
 
 ## Functions
 
