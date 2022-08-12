@@ -1,10 +1,10 @@
 # pseudobibeR
 
-The R scipts in this repository aggregate the lexicogrammatical and functonal features described by Biber (1985) and widely used for text-type, register, and genre classification tasks.
+[The R scipts in this repository](https://github.com/browndw/pseudobibeR) aggregate the lexicogrammatical and functonal features described by Biber (1985) and widely used for text-type, register, and genre classification tasks.
 
 The scripts are not really taggers. Rather, they use either [udpipe](https://bnosac.github.io/udpipe/en/) or [spaCy](https://spacy.io/) part-of-speech tagging and dependency parsing to summarize and aggregate patterns.
 
-Because they rely on spaCy, the accuracy of the resulting counts are dependent on the accuracy of tagging produced by spaCy. Thus, texts with irregular spellings, non-normative punctuation, etc. will likely produce unreliable outputs.
+Because they rely on pobablistic taggers, the accuracy of the resulting counts are dependent on the accuracy of those models. Thus, texts with irregular spellings, non-normative punctuation, etc. will likely produce unreliable outputs, unless taggers are tuned specifically for those puposes.
 
 ## Installing and running pseudobibeR
 
@@ -14,7 +14,7 @@ Use devtools to install the package.
 devtools::install_github("browndw/pseudobibeR")
 ```
 
-The main parsing function requires text processed using either **udpipe** or **spacyr**.
+The main parsing function requires text processed using either **[udpipe](https://bnosac.github.io/udpipe/docs/doc1.html)** or **[spacyr](https://cran.r-project.org/web/packages/spacyr/vignettes/using_spacyr.html)**. See their package documentation for installation and usage guidelines.
 
 ### With udpipe
 
@@ -48,7 +48,7 @@ Unlike **udpipe**, **spacyr** is not a native R package. It installs a conda vir
 
 Thus, parsing data with a spaCy model from R requires a potentially more complicated installation.
 
-However, spaCy is more robust and flexible model than udpipe (though not necessarily more accurate). If you are familiar and comfortable with Python, it may be worth your time. Otherwise, udpipe provides a robust native R alternative.
+However, spaCy is a more feature-rich and flexible model than udpipe (though not necessarily more accurate). If you are familiar and comfortable with Python, it may be worth your time. Otherwise, udpipe provides a robust native R alternative.
 
 ```
 
