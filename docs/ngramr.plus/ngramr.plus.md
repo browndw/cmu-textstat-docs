@@ -34,6 +34,13 @@ Alternatively, the following would return counts of the combined forms *xray* an
 ```r
 xray_decade <- google_ngram(word_forms = c("x-ray", "x-rays"), variety = "gb", by = "decade")
 ```
+
+```{warning}
+
+Google's data tables are HUGE. Sometime running into multiple gigabytes for simple text files. Thus, depending on the table being accessed, the return time can be slow. For example, asscessing the 1-gram Q file should take only a few seconds, but the 1-gram T file might take 10 minutes to process. The 2-gram, 3-gram, etc. files are even larger and slower to process.
+
+```
+
 ## Functions
 
 ```{toctree}
