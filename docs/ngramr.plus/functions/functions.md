@@ -11,15 +11,11 @@ The function is set up to facilitate the counting of lemmas and ingnore differen
 
 ### Description
 
-<div class="panel panel-warning">
-**Warning**
-{: .panel-heading}
-<div class="panel-body">
+```{warning}
 
 Google's data tables are HUGE. Sometime running into multiple gigabytes for simple text files. Thus, depending on the table being accessed, the return time can be slow. For example, asscessing the 1-gram Q file should take only a few seconds, but the 1-gram T file might take 10 minutes to process. The 2-gram, 3-gram, etc. files are even larger and slower to process.
 
-</div>
-</div>
+```
 
 
 ### Usage
