@@ -14,7 +14,32 @@ Use devtools to install the package.
 devtools::install_github("browndw/pseudobibeR")
 ```
 
-The main parsing function requires text processed using spacyr.
+The main parsing function requires text processed using either **udpipe** or **spacyr**.
+
+### With udpipe
+
+```r
+library(udpipe)
+library(pseudobibeR)
+
+# for demonstration purposes, take the first 10 texts from data from cmu.textstat
+
+df <- cmu.textstat::micusp_mini[1:10,]
+
+# initialize the model
+# to download the model: udpipe_download_model(language = "english")
+ud_model <- udpipe_load_model("english-ewt-ud-2.5-191206.udpipe")
+
+# parse the data
+micusp_prsd <- udpipe_annotate(ud_model, x = df$text, doc_id = df$doc_id)
+
+# convert to a data frame
+micusp_prsd <- data.frame(micusp_prsd, stringsAsFactors = F)
+
+# parse the data
+df_biber <- biber_udpipe(micusp_prsd)
+
+```
 
 ```r
 library(spacyr)
