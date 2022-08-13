@@ -80,7 +80,7 @@ The result is a table showing absolute and relative frquencies, as well as avera
 functions/functions.md
 ```
 
-## data
+## Data
 
 ```{toctree}
 :maxdepth: 2
