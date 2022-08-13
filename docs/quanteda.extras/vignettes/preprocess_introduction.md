@@ -10,16 +10,20 @@ library(tidyverse)
 The `preprocess_text()` function takes the following logical
 (TRUE/FALSE) arguments:
 
-- **contractions** (if set to TRUE contractions will be separated so
-  that, for example, *can’t* becomes *ca n’t*)
+- **contractions** (if set to TRUE contractions will be separated so that, for example, *can’t* becomes *ca n’t*)
 - **hyphens** (if set to TRUE hyphens will be replaced by spaces)
 - **punctuation** (if set to TRUE all punctuation marks will be exluded)
-- **lower_case** (if set to TRUE all strings are converted to lower
-  case)
-- **accent_replace** (if set to TRUE accented chacaracters will be
-  replaced by unaccented ones)
-- **remove_numers** (if set to TRUE strings made up of numbers will be
-  eliminated)
+- **lower_case** (if set to TRUE all strings are converted to lower case)
+- **accent_replace** (if set to TRUE accented chacaracters will be replaced by unaccented ones)
+- **remove_numers** (if set to TRUE strings made up of numbers will be eliminated)
+ 
+```{warning}
+
+The `preprocess_text()` function takes a string vector. In the examples below, you will see it applied to a simple vector. It can also be applied to a column. A **tidyverse** method, for example, would be to use `mutate()` to manipulate a **readtext** `text` column: `mutate(text = preprocess_text(text))`.
+
+Do not apply the function to an entire data frame or matrix.
+
+```
 
 ### contractions:
 
