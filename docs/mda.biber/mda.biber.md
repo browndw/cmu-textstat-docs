@@ -45,6 +45,14 @@ attributes(m)$group_means
 functions/functions.md
 ```
 
+## Data
+
+```{toctree}
+:maxdepth: 2
+
+data/data
+```
+
 ## Vignettes
 
 ```{toctree}
