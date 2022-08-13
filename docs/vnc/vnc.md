@@ -34,6 +34,15 @@ plot(hc, hang = -1)
 functions/functions.md
 ```
 
+## Data
+
+```{toctree}
+:maxdepth: 2
+
+data/data.md
+```
+
+
 ## Vignettes
 
 ```{toctree}
