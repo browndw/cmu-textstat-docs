@@ -19,6 +19,8 @@ Its compilation follows the sampling procedures of the [Corpus of Contemporary A
 
 Thus, it is similar to the [Brown family of corpora](https://www1.essex.ac.uk/linguistics/external/clmt/w3c/corpus_ling/content/corpora/list/private/brown/brown.html) in its size (roughly 1 million words).
 
+The data frame contains 2 variables (`doc_id` and `text`) and 400 observations.
+
 
 ```{warning}
 
