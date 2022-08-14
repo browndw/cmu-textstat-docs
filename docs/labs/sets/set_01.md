@@ -97,7 +97,6 @@ Check the data:
 |    5 | 0.9750217 |
 |    6 | 0.9627711 |
 
-Sample transformed scores.
 
 Finally, the values can be plotted.
 
@@ -149,8 +148,7 @@ This process raises any number of potential questions: about sentiment analysis,
 
 ### A simple processing pipeline
 
-Let’s begin by creating an object consisting of a character string. In
-this case, the first sentence from *A Tale of Two Cities*.
+Let’s begin by creating an object consisting of a character string. In this case, the first sentence from *A Tale of Two Cities*.
 
 ``` r
 totc_txt <- "It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair."
@@ -195,7 +193,6 @@ The process of splitting the string vector into constituent parts is called **to
 | it    |   9 |
 | It    |   1 |
 
-Case sensitive counts of the token *it*.
 
 Note that in doing so, we are counting capitalized and non-capitalized words as distinct tokens.
 
