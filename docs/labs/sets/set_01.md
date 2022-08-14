@@ -111,7 +111,7 @@ values.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_
 
 ```{note}
 
-Tables and figures should always be numbered and [captioned](https://stackoverflow.com/questions/31926623/figures-captions-and-labels-in-knitr). As with section number, this allows you to refer to tables and figures by number: *see Figure 2* or *Figure 3.1 illustrates...*
+In reports, tables and figures should always be numbered and [captioned](https://stackoverflow.com/questions/31926623/figures-captions-and-labels-in-knitr). As with section numbering, this allows you to refer to tables and figures directly: *see Table 2* or *Figure 3.1 illustrates...*
 
 ```
 
@@ -187,7 +187,6 @@ totc_df <- table(totc_tkns) %>% # make a table of counts
 | age   |   2 |
 | epoch |   2 |
 
-Token counts of sample sentence.
 
 The process of splitting the string vector into constituent parts is called **tokenizing**. Think of this as telling the computer how to define a word (or a “token”, which is a more precise, technical term). In this case, we’ve done it in an extremely simple way–by defining a token as any string that is bounded by spaces.
 
@@ -220,7 +219,6 @@ totc_df <- tolower(totc_txt) %>%
 | age   |   2 |
 | epoch |   2 |
 
-Token counts of sample sentence.
 
 ### What counts as a token?
 
@@ -236,6 +234,6 @@ In one common process, we could convert everything to lowercase and remove puctu
 
 That said, we also need to bear in mind that as analysts, we are often building models, creating representations, or testing hypotheses. Under most conditions, there will **always** be error introduced through the collection and preparation of our text data.
 
-The point (generally) is not to perfectly mimic what our human brain understands to be a "word." It is to make decisions that best serve our analytical task. Sometimes, that might mean tokenizing in a way that [takes advange of computational power, but is decidely more difficult for a human reader](https://ai.googleblog.com/2021/12/a-fast-wordpiece-tokenization-system.html).
+The point (generally) is not to perfectly mimic what our human brain understands to be a "word." It is to make decisions that best serve our analytical task and to be able to articulate our reasons for those decisions. Sometimes, that might even mean tokenizing in a way that [takes advange of computational power, but is decidely more difficult for a human reader to parse](https://ai.googleblog.com/2021/12/a-fast-wordpiece-tokenization-system.html).
 
 
