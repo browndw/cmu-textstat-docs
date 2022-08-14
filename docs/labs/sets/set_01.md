@@ -107,7 +107,7 @@ plot(mb_dct, type = "l", xlab = "Narrative Time", ylab = "Emotional Valence",
 ```
 
 ![Sentiment in using transformed
-values.](/Users/davidwestbrown/Desktop/cmu-textstat-docs/Labs/demo/vignettes/Lab_01_files/figure-gfm/unnamed-chunk-6-1.png)
+values.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-6-1.png)
 
 ```{note}
 
@@ -139,7 +139,7 @@ ggplot(data = mb_dct, aes(x = time, y = dct)) + geom_line(colour = "tomato") +
 ```
 
 ![Transformed vs. non-transformed sentiment in
-](/Users/davidwestbrown/Desktop/cmu-textstat-docs/Labs/demo/vignettes/Lab_01_files/figure-gfm/year_plot-1.png)
+](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/year_plot-1.png)
 
 ### What questions does this example raise for you?
 
