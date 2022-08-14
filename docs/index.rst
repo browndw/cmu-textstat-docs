@@ -17,6 +17,12 @@
    quanteda.extras/quanteda.extras.md
    vnc/vnc.md
 
+.. toctree::
+   :maxdepth: 4
+   :caption: Labs
+
+   labs/lab_overview.md
+
 Indices and tables
 ==================
 
