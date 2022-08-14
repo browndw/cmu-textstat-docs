@@ -545,7 +545,7 @@ Here is an example from [Hyland & Jiang (2016)](https://www.sciencedirect.com/sc
 
 ![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/lab_03_table.png)
 
-## Adding a grouping variable
+#### Adding a grouping variable
 
 We have 2 short texts (one from fiction and one from Twitter). Let’s first combine them into a single corpus. First, a data frame is created that has 2 columns (**doc_id** and **text**). Then, the **text** column is passed to the **preprocess_text()** function before creating the corpus.
 
