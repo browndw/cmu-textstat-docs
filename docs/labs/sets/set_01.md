@@ -415,7 +415,7 @@ text_2_freq <- text_2 %>%
 | with                                              |         1 |    6 |       1 | all   |
 | @howlifeunfolds                                   |         1 |    6 |       1 | all   |
 | \#15pages                                         |         1 |    6 |       1 | all   |
-| <https://pbs.twimg.com/media/ebouqbfwwaabeoj.jpg> |         1 |    6 |       1 | all   |
+| https://pbs.twimg.com/media/ebouqbfwwaabeoj.jpg |         1 |    6 |       1 | all   |
 
 
 Note that in addition to various logical “remove” arguments
@@ -581,10 +581,6 @@ comb_dfm <- dfm(comb_tkns) %>%
     dfm_group(groups = text_type)
 ```
 
-    #> Warning: 'as.data.frame.dfm' is deprecated.
-    #> Use 'convert(x, to = "data.frame")' instead.
-    #> See help("Deprecated")
-
 | doc_id  |  it | was | the | best |  of | times | worst | age | wisdom | foolishness |
 |:--------|----:|----:|----:|-----:|----:|------:|------:|----:|-------:|------------:|
 | Fiction |  10 |  10 |  10 |    1 |  10 |     2 |     1 |   2 |      1 |           1 |
@@ -619,3 +615,10 @@ There are, of course, a variety of ways of generating sums by  categorical varia
 Similarly, adding a **Total** row is easy with `adorn_totals()` from **[janitor](https://sfirke.github.io/janitor/reference/adorn_totals.html)**.
 
 ```
+
+The result should produce something like this:
+
+| Text Type | Tokens |
+|-----------|-------:|| Fiction   |     60 || Twitter   |     44 || **Total** |    104 |
+ 
+ 
