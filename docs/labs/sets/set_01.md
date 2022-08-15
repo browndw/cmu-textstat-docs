@@ -547,7 +547,7 @@ Here is an example from [Hyland & Jiang (2016)](https://www.sciencedirect.com/sc
 
 #### Adding a grouping variable
 
-We have 2 short texts (one from fiction and one from Twitter). Let’s first combine them into a single corpus. First, a data frame is created that has 2 columns (**doc_id** and **text**). Then, the **text** column is passed to the **preprocess_text()** function before creating the corpus.
+We have 2 short texts (one from fiction and one from Twitter). Let’s first combine them into a single corpus. First, a data frame is created that has 2 columns (`doc_id` and `text`). Then, the `text` column is passed to the `preprocess_text()` function before creating the corpus.
 
 ``` r
 comb_corpus <- data.frame(doc_id = c("text_1", "text_2"), text = c(totc_txt,
@@ -556,7 +556,7 @@ comb_corpus <- data.frame(doc_id = c("text_1", "text_2"), text = c(totc_txt,
     corpus()
 ```
 
-Next well assign a grouping variable using **docvars()**. In later labs, we’ll use a similar process to assign variables from tables of metadata.
+Next well assign a grouping variable using `docvars()`. In later labs, we’ll use a similar process to assign variables from tables of metadata.
 
 ```{note}
 
