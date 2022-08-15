@@ -621,15 +621,15 @@ comb_ntoken <- data.frame("Tokens" = ntoken(comb_tkns), docvars(comb_tkns))
 
 ```{note}
 
-With either the `comb_freq` or the `comb_ntoken` structures above, creating a corpus composition table would require by the categorical variable `text_type`. (In this example, of course, we would need to so with the latter, since we only have 2 texts.)
+With either the `comb_freq` or the `comb_ntoken` structures above, creating a corpus composition table would require summing counts by the categorical variable `text_type`. (In this simple example, of course, we would not need to so with `comb_ntoken`, since we only have 2 texts.)
 
-There are, of course, a variety of ways of generating sums by  categorical variables. [One easy way](https://www.statology.org/sum-by-group-in-r/) is to use `group_by` and `summarize()`.
+There are a variety of ways of generating sums by categorical variables. [One easy way](https://www.statology.org/sum-by-group-in-r/) is to use `group_by` and `summarize()`.
 
-Similarly, adding a **Total** row is easy with `adorn_totals()` from **[janitor](https://sfirke.github.io/janitor/reference/adorn_totals.html)**.
+Similarly, adding a **Total** row is simple with `adorn_totals()` from **[janitor](https://sfirke.github.io/janitor/reference/adorn_totals.html)**.
 
 ```
 
-The composition table in this simplificed example would produce something like this:
+The composition table in this toy example would produce something like this:
 
 | Text Type | Tokens |
 |-----------|-------:|| Fiction   |     60 || Twitter   |     44 || **Total** |    104 |
