@@ -223,7 +223,9 @@ h = 2 x \frac{IQR(x)}{n^{1/3}
 }
 ```
 
-$$h = 2 x \frac{IQR(x)}{n^{1/3}}$$
+```{note}
+[Other popular methods](http://math.furman.edu/~dcs/courses/math47/R/library/car/html/n.bins.html) for calculating optimal bin width include "Scott's rule".
+```
 
 So the number of bins is (max-min)/h, where n is the number of
 observations, max is the maximum value and min is the minimum value.
