@@ -174,12 +174,6 @@ freq_df <- textstat_frequency(sc_dfm) %>%
 
 From the weighted **dfm**, we can select any token that we’d like to look at more closely. In this case, we’ll select the most frequent token: *the*.
 
-```{note}
-In addition to a dfm of normalized frequencies, we can create [a term frequency-inverse document frequency](https://towardsdatascience.com/tf-term-frequency-idf-inverse-document-frequency-from-scratch-in-python-6c2b61b78558) (tf-idf) matrix using the `dfm_tfidf()` [function](http://quanteda.io/reference/dfm_tfidf.html).
-
-A tf-idf is a popular weighting scheme that attempts to account for both token frequency and dispersions. A tf–idf value increases proportionally according to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word.
-```
-
 After selecting the variable, we will convert the data into a more friendly data structure.
 
 There are easier ways of doing this, but the first bit of the code-chunk allows us to filter by rank and return a character vector that we can pass. This way, we can find a word of any arbitrary rank.
@@ -386,6 +380,11 @@ ft <- frequency_table(sc_tokens)
 | 4   | a     | 21605 | 2223.512 | 13233.050 | 0.109 |
 | 6   | in    | 15964 | 1642.960 |  9766.973 | 0.146 |
 
+```{note}
+In addition to a dfm of normalized frequencies (like we did above), we can create [a term frequency-inverse document frequency](https://towardsdatascience.com/tf-term-frequency-idf-inverse-document-frequency-from-scratch-in-python-6c2b61b78558) (tf-idf) matrix using the `dfm_tfidf()` [function](http://quanteda.io/reference/dfm_tfidf.html).
+
+A tf-idf is a popular weighting scheme (particularly in text classificaation tasks) that attempts to account for both token frequency and dispersions. A tf–idf value increases proportionally according to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word.
+```
 
 ### Zipf’s Law
 
