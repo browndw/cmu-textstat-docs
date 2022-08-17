@@ -383,7 +383,7 @@ ft <- frequency_table(sc_tokens)
 ```{note}
 In addition to a dfm of normalized frequencies (like we did above), we can create [a term frequency-inverse document frequency](https://towardsdatascience.com/tf-term-frequency-idf-inverse-document-frequency-from-scratch-in-python-6c2b61b78558) (tf-idf) matrix using the `dfm_tfidf()` [function](http://quanteda.io/reference/dfm_tfidf.html).
 
-A tf-idf is a popular weighting scheme (particularly in text classificaation tasks) that attempts to account for both token frequency and dispersions. A tf–idf value increases proportionally according to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word.
+A tf-idf is a popular weighting scheme (particularly in text classificaation tasks) that attempts to account for both token frequency and dispersion. A tf–idf value increases proportionally according to the number of times a token appears in the document and is offset by the number of documents in the corpus that contain the token.
 ```
 
 ### Zipf’s Law
@@ -399,6 +399,6 @@ ggplot(freq_df %>%
 ![Token rank
 vs. frequency.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-22-1.png)
 
-The relationship you’re seeing between the rank of a token and it’s frequency holds true for almost any corpus and is referred to as **Zipf’s Law** (see Brezina pg. 44).
+The relationship you’re seeing between the rank of a token and it’s frequency holds true for almost any corpus and is referred to as **[Zipf’s Law](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4176592/)** (see Brezina pg. 44).
 
 
