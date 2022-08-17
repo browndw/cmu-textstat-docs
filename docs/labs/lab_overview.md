@@ -17,5 +17,6 @@ Also, these supplementary materials were prepared using simple markdown (rather 
 :maxdepth: 3
 
 sets/set_01.md
+sets/set_02.md
 ```
 
