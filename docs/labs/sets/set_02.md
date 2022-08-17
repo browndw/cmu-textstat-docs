@@ -179,7 +179,7 @@ After selecting the variable, we will convert the data into a more friendly data
 
 There are easier ways of doing this, but the first bit of the code-chunk allows us to filter by rank and return a character vector that we can pass. This way, we can find a word of any arbitrary rank.
 
-Also note how the `rename()` function is set up. Let’s say our token is *the*. The `dfm_select()` function would result with a column named **the** that we’d want to rename `RF`. So our typical syntax would be: `rename(RF = the)`. In the chunk below, however, our column name is the variable `word`. To pass that variable to `rename`, we use `!!name(word)`.
+Also note how the `rename()` function is set up. Let’s say our token is *the*. The `dfm_select()` function would result with a column named `the` that we’d want to rename `RF`. So our typical syntax would be: `rename(RF = the)`. In the chunk below, however, our column name is the variable `word`. To pass that variable to `rename`, we use `!!name(word)`.
 
 ``` r
 word <- freq_df %>%
@@ -217,6 +217,11 @@ summary_table <- word_df %>%
 | web       | 60600.51 | 21646.94 |  50 |
 
 And we can inspect a histogram of the frequencies. To set the width of our bins we’ll use the Freedman-Diaconis rule. The bin-width is set to:
+
+```{math}
+h = 2 x \frac{IQR(x)}{n^{1/3}
+}
+```
 
 $$h = 2 x \frac{IQR(x)}{n^{1/3}}$$
 
