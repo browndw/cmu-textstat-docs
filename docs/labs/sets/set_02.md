@@ -23,7 +23,7 @@ library(quanteda.textstats)
 
 The **cmu.textstat** package comes with some data sets including a data table with a column of document ids and a column of texts. Such a table is easy to create from text data on your own local drive.
 
-To do so, you would organize plain .txt files into a directory and use the `readtext()` function from the **readtext** package.
+To do so, you would organize plain .txt files into a directory and use the `readtext()` function from the **[readtext](https://readtext.quanteda.io/articles/readtext_vignette.html)** package.
 
 ``` r
 sc_df <- sample_corpus
@@ -98,8 +98,7 @@ And check the summary again:
 
 ### Tokenize the corpus
 
-We’ll use **quanteda** to tokenize. And after tokenization, we’ll
-convert them to lower case. *Why do that here?* As a next step, we’ll being combining tokens like *a* and *lot* into single units. And we’ll be using a list of expressions that isn’t case sensitive.
+We’ll use **[quanteda](http://quanteda.io/)** to tokenize. And after tokenization, we’ll convert them to lower case. *Why do that here?* As a next step, we’ll being combining tokens like *a* and *lot* into single units. And we’ll be using a list of expressions that isn’t case sensitive.
 
 ``` r
 sc_tokens <- tokens(sc, include_docvars = TRUE, remove_punct = TRUE, remove_numbers = TRUE,
@@ -136,13 +135,13 @@ sc_tokens <- tokens_compound(sc_tokens, pattern = phrase(multiword_expressions))
 
 ### Create a document-feature matrix
 
-With our tokens object we can now create a document-feature-matrix using the `dfm()` function. As a reminder, a **dfm** is table with one row per document in the corpus, and one column per unique token in the corpus. Each cell contains a count of how many times a token shows up in that document.
+With our tokens object we can now create a document-feature-matrix using the `dfm()` function. As a reminder, a **[dfm](http://quanteda.io/reference/dfm.html)** is table with one row per document in the corpus, and one column per unique token in the corpus. Each cell contains a count of how many times a token shows up in that document.
 
 ``` r
 sc_dfm <- dfm(sc_tokens)
 ```
 
-Next we’ll create a **dfm** with proportionally weighted counts.
+Next we’ll create a **http://quanteda.io/reference/dfm_weight.html** with proportionally weighted counts.
 
 ``` r
 prop_dfm <- dfm_weight(sc_dfm, scheme = "prop")
@@ -174,6 +173,12 @@ freq_df <- textstat_frequency(sc_dfm) %>%
 
 
 From the weighted **dfm**, we can select any token that we’d like to look at more closely. In this case, we’ll select the most frequent token: *the*.
+
+```{note}
+In addition to a dfm of normalized frequencies, we can create [a term frequency-inverse document frequency](https://towardsdatascience.com/tf-term-frequency-idf-inverse-document-frequency-from-scratch-in-python-6c2b61b78558) (tf-idf) matrix using the `dfm_tfidf()` [function](http://quanteda.io/reference/dfm_tfidf.html).
+
+A tf-idf is a popular weighting scheme that attempts to account for both token frequency and dispersions. A tf–idf value increases proportionally according to the number of times a word appears in the document and is offset by the number of documents in the corpus that contain the word.
+```
 
 After selecting the variable, we will convert the data into a more friendly data structure.
 
@@ -227,8 +232,7 @@ h = 2 x \frac{IQR(x)}{n^{1/3}
 [Other popular methods](http://math.furman.edu/~dcs/courses/math47/R/library/car/html/n.bins.html) for calculating optimal bin width include "Scott's rule".
 ```
 
-So the number of bins is (max-min)/h, where n is the number of
-observations, max is the maximum value and min is the minimum value.
+So the number of bins is `(max-min)/h`, where `n` is the number of observations, `max` is the maximum value and `min` is the minimum value.
 
 ``` r
 bin_width <- function(x) {
@@ -236,7 +240,7 @@ bin_width <- function(x) {
 }
 ```
 
-Now we can plot a histogram. We’re also adding a dashed line showing the mean. Note we’re also going to use the **scales** package to remove scientific notation from our tick labels.
+Now we can plot a histogram. We’re also adding a dashed line showing the mean. Note we’re also going to use the **[scales](https://scales.r-lib.org/)** package to remove scientific notation from our tick labels.
 
 ``` r
 ggplot(word_df, aes(RF)) + geom_histogram(binwidth = bin_width(word_df$RF),
