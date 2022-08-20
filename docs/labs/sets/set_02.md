@@ -341,6 +341,12 @@ data <- dispersions_token(sc_dfm, "data") %>%
 |-----------------------------|------:|------:|
 | Deviation of proportions DP | 0.139 | 0.846 |
 
+Deviation of proportions is a useful measure as it accounts for the relative sizes of the corpus parts (see Brezina pg. 52). Thus, it works well when a corpus is made up of texts with unequal lengths. It is calculated as follows ([Greis 2008, p. 415](https://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.711.3466&rep=rep1&type=pdf)):
+
+1. Determine the sizes s<sub>1−*n*</sub> of each of the n corpus parts, which are normalized against the overall corpus size and correspond to expected percentages which take differently-sized corpus parts into consideration.
+2. Determine the frequencies v<sub>1−*n*</sub> with which a occurs in the n corpus parts, which are normalized against the overall number of occurrences of a and correspond to observed percentages.
+3. Compute all *n* pairwise absolute differences of observed and expected percentages, sum them up, and divide the result by two. The result is *DP*, which can theoretically range from approximately 0 to 1, where values close
+to 0 indicate that a is distributed across the n corpus parts as one would expect given the sizes of the *n* corpus parts. By contrast, values close to 1 indicate that a is distributed across the *n* corpus parts exactly the opposite way one would expect given the sizes of the n corpus parts. 
 
 #### Dispersions for all tokens
 
