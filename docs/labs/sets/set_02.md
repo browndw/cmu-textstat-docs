@@ -689,7 +689,7 @@ LL = 2 \times \sum_i O_i \ln \frac{O_i}{E_i}
 A good explanation of its implementation in linguistics can be found
 here: <http://ucrel.lancs.ac.uk/llwizard.html>
 
-In addition to log-likelihood, the **textstat_keyness()** function in
+In addition to log-likelihood, the `textstat_keyness()` function in
 quanteda has other optional measures.
 
 See here: <https://quanteda.io/reference/textstat_keyness.html>
@@ -731,7 +731,7 @@ doc_categories <- sample_corpus %>%
 #### Assign the meta-data to the corpus
 
 The accessor function `docvars()` lets us add or modify data in an
-object. We’re going to use it to assign **text_type** as a variable.
+object. We’re going to use it to assign `text_type` as a variable.
 Note that `doc_categories` could include more than one column and the
 assignment process would be the same.
 
@@ -806,8 +806,8 @@ carry out calculations using `textstat_keyness()`.
 
 When we use it with textstat_keyness we are indicating that we want the
 papers with discipline_cat equal to “acad” to be our **target corpus**.
-The everything else (i.e., “acad” == FALSE) will be the **reference
-corpus**.
+The everything else (i.e., “acad” == FALSE) will be the **[reference
+corpus](https://www.researchgate.net/publication/336040325_The_reference_corpus_matters_Comparing_the_effect_of_different_reference_corpora_on_keyword_analysis)**.
 
 The specific method we’re using is log-likelihood, which is designated
 by “lr”. Thus keyness will show the tokens that are more frequent in
@@ -817,11 +817,9 @@ text-types.
 ``` r
 acad_kw <- textstat_keyness(sc_dfm, docvars(sc_dfm, "text_type") == "acad", measure = "lr")
 ```
-
-Note the second argument: `docvars(sc_dfm, “text_type”) == “acad”`.
-That slightly awkward syntax simply produces a logical vector. You could
-store it and pass the vector the function, as well.
-
+```{note}
+The slightly awkward syntax of the second argument the second argument `docvars(sc_dfm, “text_type”) == “acad”` simply produces a logical vector. You could store it and pass the vector the function, as well.
+```
 
 | feature        |        G2 | p | n_target | n_reference |
 |---------------|----------:|--:|---------:|------------:|
@@ -952,7 +950,7 @@ include:
         proportions”.
 -   Relative Risk
 -   Odds Ratio
--   Log Ratio - see Andrew Hardie’s CASS blog for how to interpret this
+-   Log Ratio - see [Andrew Hardie’s CASS blog](http://cass.lancs.ac.uk/log-ratio-an-informal-introduction/) for how to interpret this
     -   Note that if either word has zero frequency then a small
         adjustment is automatically applied (0.5 observed frequency
         which is then normalized) to avoid division by zero errors.
