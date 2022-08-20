@@ -219,7 +219,6 @@ And we can inspect a histogram of the frequencies. To set the width of our bins 
 
 ```{math}
 h = 2 x \frac{IQR(x)}{n^{1/3}
-}
 ```
 
 ```{note}
@@ -402,3 +401,232 @@ vs. frequency.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/mai
 The relationship you’re seeing between the rank of a token and it’s frequency holds true for almost any corpus and is referred to as **[Zipf’s Law](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4176592/)** (see Brezina pg. 44).
 
 
+## Lab 5: Collocations
+
+This is a short lab that introduces the concept of:
+
+-   collocations,
+-   how to calculate word association measures like pointwise mutual
+    information, and
+-   how to plot collocational networks.
+
+This lab will also cover the process of reading in a corpus from a
+directory of text files.
+
+### Load the needed packages
+
+``` r
+library(cmu.textstat)
+library(tidyverse)
+library(quanteda)
+library(quanteda.textstats)
+library(ggraph)
+```
+
+### Prepare the data
+
+First, we’ll pre-process our text, create a corpus and tokenize the
+data:
+
+``` r
+sc_tokens <- sample_corpus %>%
+  mutate(text = preprocess_text(text)) %>%
+  corpus() %>%
+  tokens(what="fastestword", remove_numbers=TRUE)
+```
+
+### Collocates by mutual information (MI)
+
+The `collocates_by_MI()` [function](https://cmu-textstat-docs.readthedocs.io/en/latest/quanteda.extras/functions/functions.html#collocates-by-mi) produces collocation measures (by [pointwise mutual information](https://en.wikipedia.org/wiki/Pointwise_mutual_information)) for a specified token in a **quanteda tokens** object. In addition to a token, a span or window (as given by a number of words to the **left** and **right** of the **node word**) is required. The default is 5 to the left and 5 to the right.
+
+The formula for calculating MI is as follows:
+
+
+```{math}
+log\_{2} \frac{O\_{11}}{E\_{11}}
+```
+
+Where *O<sub>11</sub>* and *E<sub>11</sub>* are the observed (i.e.,
+node + collocate) and expected frequencies of the node word within a
+given window. The expected frequency is given by:
+
+```{math}
+E\_{11} = \frac{R\_{1} \times C\_{1}}{N}
+```
+
+-   *N* is the number of words in the corpus
+-   *R<sub>1</sub>* is the frequency of the node in the whole corpus
+-   *C<sub>1</sub>* is the frequency of the collocate in the whole
+    corpus
+
+We’ll start by making a table of tokens that collocate with the token
+*money*.
+
+``` r
+money_collocations <- collocates_by_MI(sc_tokens, "money")
+```
+
+Check the result:
+
+| token         | col_freq | total_freq |  MI_1 |
+|:--------------|---------:|-----------:|------:|
+| 10:29         |        1 |          1 | 11.08 |
+| 38th          |        1 |          1 | 11.08 |
+| allocations   |        1 |          1 | 11.08 |
+| americanizing |        1 |          1 | 11.08 |
+| anthedon      |        1 |          1 | 11.08 |
+| assignats     |        1 |          1 | 11.08 |
+
+Now, let’s make a similar table for collocates of *time*.
+
+``` r
+time_collocations <- collocates_by_MI(sc_tokens, "time")
+```
+
+| token      | col_freq | total_freq |   MI_1 |
+|:-----------|---------:|-----------:|-------:|
+| decleat    |        2 |          1 | 10.135 |
+| poignantly |        2 |          1 | 10.135 |
+| 16a        |        1 |          1 |  9.135 |
+| 17a        |        1 |          1 |  9.135 |
+| 21h        |        1 |          1 |  9.135 |
+| aba        |        1 |          1 |  9.135 |
+
+As is clear from the above table, MI is sensitive to rare/infrequent
+words (see Brezina pg. 74). Because of that sensitivity, it commmon to make thresholds for both token frequency (absolute frequency) and MI score (usually at some value ≥ 3).
+
+For our purposes, we’ll filter for AF ≥ 5 and MI ≥ 5.
+
+``` r
+tc <- time_collocations %>% filter(col_freq >= 5 & MI_1 >= 5)
+mc <- money_collocations %>% filter(col_freq >= 5 & MI_1 >= 5)
+```
+
+Check the result:
+
+| token       | col_freq | total_freq |  MI_1 |
+|:------------|---------:|-----------:|------:|
+| warner      |        6 |          8 | 8.720 |
+| cessation   |        5 |          7 | 8.650 |
+| irradiation |        5 |          7 | 8.650 |
+| lag         |        5 |          7 | 8.650 |
+| wasting     |        7 |         11 | 8.483 |
+| frame       |        7 |         16 | 7.943 |
+
+| token     | col_freq | total_freq |  MI_1 |
+|:----------|---------:|-----------:|------:|
+| owe       |        5 |         21 | 9.010 |
+| raise     |       10 |         79 | 8.099 |
+| extra     |        6 |         64 | 7.665 |
+| spend     |       10 |        111 | 7.608 |
+| insurance |        5 |         64 | 7.402 |
+| spent     |        9 |        122 | 7.320 |
+
+
+### Create a tbl_graph object for plotting
+
+A `tbl_graph` is [a data structure](https://www.data-imaginist.com/2017/introducing-tidygraph/) for **tidyverse** (ggplot2) network plotting.
+
+For this, we’ll use the `col_network()` https://cmu-textstat-docs.readthedocs.io/en/latest/quanteda.extras/functions/functions.html#col-network.
+
+``` r
+net <- col_network(tc, mc)
+```
+
+# Plot network
+
+The network plot shows the tokens that distinctly collocate with either
+*time* or *money*, as well as those that intersect. The distance from
+the central tokens (*time* and *money*) is governed by the MI score and
+the transparency (or alpha) is governed by the token frequency.
+
+The aesthetic details of the plot can be manipulated in the various
+**[ggraph](https://ggraph.data-imaginist.com/)** options.
+
+``` r
+ggraph(net, weight = link_weight, layout = "stress") + 
+  geom_edge_link(color = "gray80", alpha = .75) + 
+  geom_node_point(aes(alpha = node_weight, size = 3, color = n_intersects)) +
+  geom_node_text(aes(label = label), repel = T, size = 3) +
+  scale_alpha(range = c(0.2, 0.9)) +
+  theme_graph() +
+  theme(legend.position="none")
+```
+
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/net_plot-1.png)<!-- -->
+
+
+### Reading in local files
+
+#### Create a vector of file paths
+
+First, go to Canvas and dowload the `screenplay_corpus` (in the Data
+folder under Files). Unzip the corpus and note/copy the path to the
+folder.
+
+Next, we’ll create a vector of the file paths. Remember to replace
+`your/path` with the place-holder path in the `list.files()`
+function.
+
+``` r
+files_list <- list.files("your/path", full.names = T, pattern = "*.txt")
+```
+
+#### Read in files using readtext
+
+Next, we’ll read in the files using **[readtext](https://readtext.quanteda.io/reference/readtext.html)**. And for the purposes of efficiency, we’ll sample out 50 files from the paths vector.
+
+``` r
+set.seed(1234)
+
+sp <- sample(files_list, 50) %>%
+  readtext::readtext()
+```
+
+#### Extract the dialogue
+
+These particular files are formatted using some simple markup. So we’ll
+use the `from_play()` [function](https://cmu-textstat-docs.readthedocs.io/en/latest/functions/functions.html#from-play) to extract the dialogue.
+
+``` r
+sp <- from_play(sp, extract = "dialogue")
+```
+
+#### Tokenize
+
+``` r
+sp <-   sp %>%
+  mutate(text = preprocess_text(text)) %>%
+  corpus() %>%
+  tokens(what="fastestword", remove_numbers=TRUE)
+```
+
+#### Calculate MI
+
+Now we’ll calculate collocations for the tokens *boy* and *girl*, and filter. Note that we’re only looking for tokens 3 words to the left of the node word.
+
+``` r
+b <- collocates_by_MI(sp, "boy", left = 3, right = 0)
+b <- b %>% filter(col_freq >= 3 & MI_1 >= 3)
+
+g  <- collocates_by_MI(sp, "girl", left = 3, right = 0)
+g <- g %>% filter(col_freq >= 3 & MI_1 >= 3)
+```
+
+#### Plot the network
+
+``` r
+net <- col_network(b, g)
+
+ggraph(net, weight = link_weight, layout = "stress") + 
+  geom_edge_link(color = "gray80", alpha = .75) + 
+  geom_node_point(aes(alpha = node_weight, size = 3, color = n_intersects)) +
+  geom_node_text(aes(label = label), repel = T, size = 3) +
+  scale_alpha(range = c(0.2, 0.9)) +
+  theme_graph() +
+  theme(legend.position="none")
+```
+
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
+
+See other examples [here](https://www.sciencedirect.com/science/article/pii/S1475158518302169), [here](https://link.springer.com/chapter/10.1007/978-3-319-92582-0_4), and [here](https://www.youtube.com/watch?v=WX0u-lj3dkw).
