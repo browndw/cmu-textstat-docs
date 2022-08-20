@@ -533,7 +533,7 @@ For this, we’ll use the `col_network()` https://cmu-textstat-docs.readthedocs.
 net <- col_network(tc, mc)
 ```
 
-# Plot network
+### Plot network
 
 The network plot shows the tokens that distinctly collocate with either
 *time* or *money*, as well as those that intersect. The distance from
