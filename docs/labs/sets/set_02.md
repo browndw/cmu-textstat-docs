@@ -806,11 +806,11 @@ carry out calculations using `textstat_keyness()`.
 
 When we use it with textstat_keyness we are indicating that we want the
 papers with discipline_cat equal to “acad” to be our **target corpus**.
-The everything else (i.e., “acad” == FALSE) will be the **[reference
+The everything else (i.e., `"acad” == FALSE`) will be the **[reference
 corpus](https://www.researchgate.net/publication/336040325_The_reference_corpus_matters_Comparing_the_effect_of_different_reference_corpora_on_keyword_analysis)**.
 
 The specific method we’re using is log-likelihood, which is designated
-by “lr”. Thus keyness will show the tokens that are more frequent in
+by `lr`. Thus keyness will show the tokens that are more frequent in
 papers written for the *academic* text-type vs. those written for other
 text-types.
 
