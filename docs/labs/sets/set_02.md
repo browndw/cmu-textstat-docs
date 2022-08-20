@@ -444,8 +444,7 @@ The formula for calculating MI is as follows:
 
 
 ```{math}
-log\_{2} \frac{O\_{11}}{E\_{11}}
-}
+log_{2} \frac{O_{11}}{E_{11}}
 ```
 
 Where *O<sub>11</sub>* and *E<sub>11</sub>* are the observed (i.e.,
@@ -453,8 +452,7 @@ node + collocate) and expected frequencies of the node word within a
 given window. The expected frequency is given by:
 
 ```{math}
-E\_{11} = \frac{R\_{1} \times C\_{1}}{N}
-}
+E_{11} = \frac{R_{1} \times C_{1}}{N}
 ```
 
 -   *N* is the number of words in the corpus
@@ -530,7 +528,7 @@ Check the result:
 
 A `tbl_graph` is [a data structure](https://www.data-imaginist.com/2017/introducing-tidygraph/) for **tidyverse** (ggplot2) network plotting.
 
-For this, we’ll use the `col_network()` https://cmu-textstat-docs.readthedocs.io/en/latest/quanteda.extras/functions/functions.html#col-network.
+For this, we’ll use the `col_network()` [function](https://cmu-textstat-docs.readthedocs.io/en/latest/quanteda.extras/functions/functions.html#col-network).
 
 ``` r
 net <- col_network(tc, mc)
