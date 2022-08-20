@@ -219,6 +219,7 @@ And we can inspect a histogram of the frequencies. To set the width of our bins 
 
 ```{math}
 h = 2 x \frac{IQR(x)}{n^{1/3}
+}
 ```
 
 ```{note}
@@ -444,6 +445,7 @@ The formula for calculating MI is as follows:
 
 ```{math}
 log\_{2} \frac{O\_{11}}{E\_{11}}
+}
 ```
 
 Where *O<sub>11</sub>* and *E<sub>11</sub>* are the observed (i.e.,
@@ -452,6 +454,7 @@ given window. The expected frequency is given by:
 
 ```{math}
 E\_{11} = \frac{R\_{1} \times C\_{1}}{N}
+}
 ```
 
 -   *N* is the number of words in the corpus
