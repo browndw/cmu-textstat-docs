@@ -630,4 +630,6 @@ ggraph(net, weight = link_weight, layout = "stress") +
 
 ![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->
 
-See other examples [here](https://www.sciencedirect.com/science/article/pii/S1475158518302169), [here](https://link.springer.com/chapter/10.1007/978-3-319-92582-0_4), and [here](https://www.youtube.com/watch?v=WX0u-lj3dkw).
+See other examples [here](https://www.sciencedirect.com/science/article/pii/S1475158518302169)and [here](https://link.springer.com/chapter/10.1007/978-3-319-92582-0_4).
+
+[![Collocatonal Networks](https://i3.ytimg.com/vi/WX0u-lj3dkw/maxresdefault.jpg)](https://youtu.be/WX0u-lj3dkw)
