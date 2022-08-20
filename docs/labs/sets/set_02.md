@@ -818,7 +818,7 @@ text-types.
 acad_kw <- textstat_keyness(sc_dfm, docvars(sc_dfm, "text_type") == "acad", measure = "lr")
 ```
 ```{note}
-The slightly awkward syntax of the second argument the second argument `docvars(sc_dfm, “text_type”) == “acad”` simply produces a logical vector. You could store it and pass the vector the function, as well.
+The slightly awkward syntax of the second argument `docvars(sc_dfm, “text_type”) == “acad”` simply produces a logical vector. You could store it and pass the vector the function, as well.
 ```
 
 | feature        |        G2 | p | n_target | n_reference |
