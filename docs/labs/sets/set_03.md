@@ -269,8 +269,7 @@ And check the frequencies:
 ```{warning}
 There are multiple ways to filter/select the tokens we want to count. We could, for example, just filter out all rows in the annotation data frame tagged as **PUNCT**, if we wanted to exclude punctuation from our counts.
 
-I would, however, advise against altering the original parsed file. We may want to try different options, and we want to avoid having to re-parse our corpus, as that is the most computationally intensive step in the processing pipeline. In fact, if this were part of an actual project, I would advise that you save the parsed data frame as a
-`.csv` file using `write_csv()` for later use.
+I would, however, advise against altering the original parsed file. We may want to try different options, and we want to avoid having to re-parse our corpus, as that is the most computationally intensive step in the processing pipeline. In fact, if this were part of an actual project, I would advise that you save the parsed data frame as a `.csv` file using `write_csv()` or as an `.rda` file for later use.
 ```
 
 We will use the `tokens_select()` function to either keep or remove tokens based on regular expressions.
