@@ -404,7 +404,7 @@ fic_nps <- keywords_phrases(x = fic_anno$phrase_tag, term = tolower(fic_anno$tok
 Note that although the function uses the term **keywords**, it is
 **NOT** executing a hypothesis test of any kind.
 
-## Extract only unique phrases
+#### Extract only unique phrases
 
 Note that **udpipe** extracts overlapping constituents of phrase structures. Normally, we would want only *unique* phrases. To find those we’ll take advantage of the **start** and **end** indexes, using the `between()` function from the **[data.table](https://cran.r-project.org/web/packages/data.table/vignettes/datatable-intro.html)** package.
 
