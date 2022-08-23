@@ -707,8 +707,6 @@ For a nicely formatted output, we can use the **[jtools](https://jtools.jacob-lo
 
 ``` r
 jtools::export_summs(glm_fit, exp = TRUE, error_format = "[{conf.low}, {conf.high}]")
-#> Warning in knit_print.huxtable(x, ...): Unrecognized output format "gfm-yaml". Using `to_screen` to print huxtables.
-#> Set options("huxtable.knitr_output_format") manually to "latex", "html", "rtf", "docx", "pptx", "md" or "screen".
 ```
 
                                       ─────────────────────────────────────────────────
