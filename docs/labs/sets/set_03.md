@@ -499,7 +499,35 @@ process, as it will be for this lab. Our problem comes from Brezina (pg.
 
 We are going to mimic Brezina’s experiment, but instead of using the BE06 and AmE06 corpora, we will use the [Michigan Corpus of Upper-Level Student Papers](https://elicorpora.info/main) (MICUSP) and the [British Academic Written English corpus](https://www.coventry.ac.uk/research/research-directories/current-projects/2015/british-academic-written-english-corpus-bawe/) (BAWE).
 
-To save time, the data has already been tagged with **udpipe**. To tag files this way is relatively straightforward. Don’t run the chunk below, but you can see how it would work if you uncommented the code lines.
+To save time, the data has already been tagged with **udpipe** using the follow code.
+
+```r
+udmodel <- udpipe_load_model(file = "english-ewt-ud-2.5-191206.udpipe")
+target_folder <- "/Users/user/Downloads/bawe_udpipe/"
+files_list <- list.files("/Users/user/Downloads/bawe_body", full.names = T)
+
+tag_text <- function(x){
+  
+  file_name <- basename(x) %>% str_remove(".txt")
+  output_file <- paste0(target_folder, file_name, "_udp.txt")
+  txt <- readr::read_file(x) %>% str_squish()
+  annotation <- udpipe_annotate(udmodel, txt, parser = "none") %>% 
+    as.data.frame() %>%
+    dplyr::select(token, xpos) %>%
+    unite("token", token:xpos)
+  
+  new_txt <- paste(annotation$token, collapse=" ")
+  write.table(new_txt, output_file, quote = F, row.names = F, col.names = F)
+  
+}
+
+lapply(files_list, tag_text)
+```
+
+```{note}
+In this case, tags are being embedded. That is, the token is being linked to the tag with an underscore: `Throughout_IN history_NN`. However, the same principle of tagging a text (or a subset of texts) then writing out the result to a local file is one way to handle the computational demands of parsing. For example, you could take the vector of file paths, split it into chunks of say 10, then iterate along those chucks, writing out each result as it progresses. That way, you eliminate the need to put everything into memory at the same time. After they files have been created, they can be joined for analysis.
+```
+
 
 #### Prepare tokens
 
