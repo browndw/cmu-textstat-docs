@@ -525,7 +525,7 @@ lapply(files_list, tag_text)
 ```
 
 ```{note}
-In this case, tags are being embedded. That is, the token is being linked to the tag with an underscore: `Throughout_IN history_NN`. However, the same principle of tagging a text (or a subset of texts) then writing out the result to a local file is one way to handle the computational demands of parsing. For example, you could take the vector of file paths, split it into chunks of say 10, then iterate along those chucks, writing out each result as it progresses. That way, you eliminate the need to put everything into memory at the same time. After they files have been created, they can be joined for analysis.
+In this case, tags are being embedded. That is, the token is being linked to the tag with an underscore: `Throughout_IN history_NN`. However, the same principle of tagging a text (or a subset of texts) then writing out the result to a local file is one way to handle the computational demands of parsing. For example, you could take the vector of file paths, split it into chunks of say 10, then iterate along those chunks, writing out each result as it progresses. That way, you eliminate the need to put everything into memory at the same time. After the files have been created, they can be joined for analysis.
 ```
 
 
