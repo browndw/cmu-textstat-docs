@@ -177,6 +177,14 @@ Type-to-token is calculated using a [moving-average type-to-token ration (MATTR)
 functions/functions.md
 ```
 
+## Data
+
+```{toctree}
+:maxdepth: 2
+
+data/data.md
+```
+
 ## References
 
 Biber, Douglas (1988). Variations Across Speech and Writing. Cambridge University Press, Cambridge.
