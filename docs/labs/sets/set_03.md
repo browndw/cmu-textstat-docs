@@ -1393,7 +1393,6 @@ names(f3_lm$coefficients) <- names(coef(f3_lm)) %>%
                                   ─────────────────────────────────────────────────────────
                                     *** p < 0.001; ** p < 0.01; * p < 0.05.                
 
-Column names: names, Factor 1, Factor 2, Factor 3
 
 #### Plotting the results
 
@@ -1416,8 +1415,7 @@ That interpretation usually involves giving names to the dimensions based on the
 Features with high positive loadings include private verbs (like *think*), contractions, and first and second person pronouns. Features with high negative loadings include nouns and propositional phrases. Biber concludes that these patterns reflect the communicative purposes
 of the registers. Ones that are more interactive and affective vs. others that are more instructive and informative.
 
-In order to understand how certain features are functioning, it is important to see how they are being used, which we can do effienciently with Key Words in Context (KWIC). Here we take “Confidence High” from the positive end of the dimension and “Academic Writing Moves” from the
-negative.
+In order to understand how certain features are functioning, it is important to see how they are being used, which we can do effienciently with [Key Words in Context](https://en.wikipedia.org/wiki/Key_Word_in_Context) (KWIC). Here we take “Confidence High” from the positive end of the dimension and “Academic Writing Moves” from the negative using the `kwic()` [function](https://quanteda.io/reference/kwic.html).
 
 ``` r
 ch <- kwic(micusp_tokens, ds_dict["ConfidenceHigh"])
