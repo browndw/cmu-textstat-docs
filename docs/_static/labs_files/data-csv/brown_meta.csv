@@ -1,0 +1,501 @@
+﻿doc_id,text_type,text_source,text_title
+A01,PRESS: REPORTAGE,Atlanta Constitution,Political Reportage
+A02,PRESS: REPORTAGE,Dallas Morning News,Political Reportage
+A03,PRESS: REPORTAGE,Chicago Tribune,Political Reportage
+A04,PRESS: REPORTAGE,Christian Science Monitor,Political Reportage
+A05,PRESS: REPORTAGE,Providence Journal,Political Reportage
+A06,PRESS: REPORTAGE,Newark Evening News,Political Reportage
+A07,PRESS: REPORTAGE,New York Times,Political Reportage
+A08,PRESS: REPORTAGE,"Times-Picayune, New Orleans",Political Reportage
+A09,PRESS: REPORTAGE,Philadelphia Inquirer,Political Reportage
+A10,PRESS: REPORTAGE,"Oregonian, Portland",Political Reportage
+A11,PRESS: REPORTAGE,"Sun, Baltimore",Sports Reportage
+A12,PRESS: REPORTAGE,Dallas Morning News,Sports Reportage
+A13,PRESS: REPORTAGE,Rocky Mountain News,Sports Reportage
+A14,PRESS: REPORTAGE,New York Times,Sports Reportage.
+A15,PRESS: REPORTAGE,St. Louis Post-Dispatch,Sports Reportage
+A16,PRESS: REPORTAGE,Chicago Tribune,Society Reportage
+A17,PRESS: REPORTAGE,Rocky Mountain News,Society Reportage
+A18,PRESS: REPORTAGE,Philadelphia Inquirer,Society Reportage
+A19,PRESS: REPORTAGE,"Sun, Baltimore",Spot News
+A20,PRESS: REPORTAGE,Chicago Tribune,Spot News
+A21,PRESS: REPORTAGE,Detroit News,Spot News
+A22,PRESS: REPORTAGE,Atlanta Constitution,Spot News
+A23,PRESS: REPORTAGE,"Oregonian, Portland",Spot News
+A24,PRESS: REPORTAGE,Providence Journal,Spot News
+A25,PRESS: REPORTAGE,San Francisco Chronicle,Spot News
+A26,PRESS: REPORTAGE,Dallas Morning News,Financial Reportage
+A27,PRESS: REPORTAGE,Los Angeles Times ,Financial Reportage
+A28,PRESS: REPORTAGE,Wall Street Journal,Financial Reportage
+A29,PRESS: REPORTAGE,Dallas Morning News,Cultural Reportage.
+A30,PRESS: REPORTAGE,Los Angeles Times ,Cultural
+A31,PRESS: REPORTAGE,Miami Herald,Cultural Reportage
+A32,PRESS: REPORTAGE,San Francisco Chronicle,Cultural Reportage
+A33,PRESS: REPORTAGE,Washington Post,Cultural Reportage
+A34,PRESS: REPORTAGE,New York Times,News of the Week in Review
+A35,PRESS: REPORTAGE,James J. Maguire,A Family Affair
+A36,PRESS: REPORTAGE,William Gomberg,Unions and the Anti-Trust Laws
+A37,PRESS: REPORTAGE,Time,National Affairs
+A38,PRESS: REPORTAGE,Sports Illustrated,A Duel Golfers Will Never Forget
+A39,PRESS: REPORTAGE,Newsweek,Sports
+A40,PRESS: REPORTAGE,Time,People. Art & Education
+A41,PRESS: REPORTAGE,Robert Wallace,This Is The Way It Came About
+A42,PRESS: REPORTAGE,Newsweek,National Affairs
+A43,PRESS: REPORTAGE,U. S. News & World Report,Better Times for Turnpikes; A Plan to Free U. S. Gold Supply
+A44,PRESS: REPORTAGE,John Tebbel; Gilbert Chapman,Books Go Co-operative; Reading and the Free Society
+B01,PRESS: EDITORIAL,Atlanta Constitution,Editorials
+B02,PRESS: EDITORIAL,Christian Science Monitor,Editorials
+B03,PRESS: EDITORIAL,Detroit News,Editorials
+B04,PRESS: EDITORIAL,Miami Herald,Editorials
+B05,PRESS: EDITORIAL,Newark Evening News,Editorials
+B06,PRESS: EDITORIAL,St. Louis Post-Dispatch,Editorials
+B07,PRESS: EDITORIAL,New York Times,Editorials
+B08,PRESS: EDITORIAL,Atlanta Constitution,Columns
+B09,PRESS: EDITORIAL,Christian Science Monitor,Columns
+B10,PRESS: EDITORIAL,Sun. Baltimore,Columns
+B11,PRESS: EDITORIAL,Los Angeles Times,Columns
+B12,PRESS: EDITORIAL,Newark Evening News,Columns
+B13,PRESS: EDITORIAL,"Times-Picayune, New Orleans",Columns
+B14,PRESS: EDITORIAL,Atlanta Constitution,Columns
+B15,PRESS: EDITORIAL,Providence Journal,Letters to the Editor
+B16,PRESS: EDITORIAL,Chicago Tribune,Voice of the People
+B17,PRESS: EDITORIAL,Newark Evening News,What Readers Have to Say
+B18,PRESS: EDITORIAL,New York Times,Letters to the Times
+B19,PRESS: EDITORIAL,Philadelphia Inquirer,The Voice of the People
+B20,PRESS: EDITORIAL,Nation,Editorials
+B21,PRESS: EDITORIAL,Gerald W. Johnson; James Deakin,The Cult of the Motor Car; How Much Fallout Can We Take
+B22,PRESS: EDITORIAL,Commonweal,Week by Week
+B23,PRESS: EDITORIAL,"William F. Buckley, Jr.; James Burnham",We Shall Return; Tangle in Katanga
+B24,PRESS: EDITORIAL,Time,Reviews
+B25,PRESS: EDITORIAL,"Alexander Werth; Peter Solsich, Jr.",Walkout in Moscow; The Armed Superpatriots
+B26,PRESS: EDITORIAL,National Review,To the Editor
+B27,PRESS: EDITORIAL,Saturday Review,Letters to the Editor
+C01,PRESS: REVIEWS,Chicago Daily Tribune,Reviews
+C02,PRESS: REVIEWS,Christian Science Monitor,Reviews
+C03,PRESS: REVIEWS,New York Times,Reviews
+C04,PRESS: REVIEWS,Providence Journal,Reviews
+C05,PRESS: REVIEWS,Christian Science Monitor,Reviews
+C06,PRESS: REVIEWS,Wall Street Journals,Reviews
+C07,PRESS: REVIEWS,New York Times,Reviews
+C08,PRESS: REVIEWS,Providence Journal,Reviews
+C09,PRESS: REVIEWS,New York Times,Reviews
+C10,PRESS: REVIEWS,Providence Journal,Reviews
+C11,PRESS: REVIEWS,New York Times,Reviews
+C12,PRESS: REVIEWS,Christian Science Monitor,Reviews
+C13,PRESS: REVIEWS,Wall Street Journal,Reviews
+C14,PRESS: REVIEWS,New York Times,Reviews
+C15,PRESS: REVIEWS,Life,Reviews
+C16,PRESS: REVIEWS,Saturday Review,Reviews
+C17,PRESS: REVIEWS,Time,Reviews
+D01,RELIGION,William Pollard,Physicist and Christian
+D02,RELIGION,Schubert Ogden,Christ Without Myth
+D03,RELIGION,Edward E. Kelly,Christian Unity in England
+D04,RELIGION,Jaroslav Pelikan,The Shape of Death
+D05,RELIGION,Perry Miller,Theodore Parker: Apostasy With in Liberalism
+D06,RELIGION,A Howard Kellyl Shirley Schuyler; Nathanael Olson,Out of Doubt into Faith; Not as the World Giveth; Are You in Orbit?
+D07,RELIGION,Peter Eldersveld,Faith Amid Fear
+D08,RELIGION,Schuyler Cammann,The Magic Square of Three
+D09,RELIGION,Eugene E. Golay,Organizing the Local Church
+D10,RELIGION,Huston Smith,Interfaith Communication: The Contemporary Scene
+D11,RELIGION,Paul Ramsey,War & the Christian Conscience
+D12,RELIGION,Kenneth Underwood and Widen Jacobson,Probing the Ethics of Realtors
+D13,RELIGION,Donald H. Andrews; George Bo Longstreet,The New Science & the New Faith; The Seeming Impossible
+D14,RELIGION,Kenneth S. Latourette,Christianity in a Revolutionary Age
+D15,RELIGION,Ernest Becker,Zen: A Rational critique
+D16,RELIGION,Anonymous; Harold Brenneman,What the Holy Catholic Bible Teach; Notice You May Do As You Please
+D17,RELIGION,Anonymous; J. I. Rivero,Guideposts: 15th Anniversary Issue; The Night Our Paper Died
+E01,SKILL AND HOBBIES,Ben Welder; Joe Welder,Henri de Courcy: Jr. Mr. Canada; Joe Welder
+E02,SKILL AND HOBBIES,Dorothy Schroeder; Anonymous,Plant a Carpet of Bloom; Avocado is Something Special
+E03,SKILL AND HOBBIES,D. F. Martin,Will Aircraft or Missiles Win Wars?
+E04,SKILL AND HOBBIES,Harris Goldsmith; Robert C. Marsh; R.D.D.,"The Schnabel Pro Arte Trout; The True Sound of a Solid Second; Review of Adam, Giselle"
+E05,SKILL AND HOBBIES,Paul Nigro; Patricia Barney; Anonymous,The Younger Generation; Use of Common Sense Makes Dogs Acceptable; The Malady Lingers On
+E06,SKILL AND HOBBIES,Joseph E. Choate,The American Boating Scene
+E07,SKILL AND HOBBIES,Paul Larson and Gordon Odegard,How to Design Your Interlocking Frame
+E08,SKILL AND HOBBIES,Don Francisco,Formulas and Math Every Hot Rodder Should Know
+E09,SKILL AND HOBBIES,Don McMahan; Edith Shaw,The Week at Ben White Raceway; The Picture at Del Mar
+E10,SKILL AND HOBBIES,Larry Koller,The New Guns of 61
+E11,SKILL AND HOBBIES,Idwal Jones,Santa Cruz Run
+E12,SKILL AND HOBBIES,Julia Newman,Travel and Camera USA
+E13,SKILL AND HOBBIES,Robert Deardorff,Step by Step through Istanbul
+E14,SKILL AND HOBBIES,Ann Carnahan,Nick Manero's Cook-out Barbecue Book
+E15,SKILL AND HOBBIES,Anonymous,Pottery from Old Molds; Knitting Knacks
+E16,SKILL AND HOBBIES,Hal Kelly,Build Hotei
+E17,SKILL AND HOBBIES,Anonymous; Patrick K. Snook,This is the Vacation Cottage You Can Build; Care and Basic Use of the Drill Press
+E18,SKILL AND HOBBIES,Lura W. Watkins; Boyd B. Stutler,The Bridge Over the Merrimac; Veteran Philippi Bridge
+E19,SKILL AND HOBBIES,Booth Hemingway and Stuart H. Brown,How to Own a Pool and Like It.
+E20,SKILL AND HOBBIES,Anonymous,What You Should Know About Air Conditioning
+E21,SKILL AND HOBBIES,Richard McCosh,Recreation Site Selection
+E22,SKILL AND HOBBIES,Roy Harris; Helen Havener,Roy Harris Salutes Serge Prokofieff; A 30 Years War
+E23,SKILL AND HOBBIES,Norman Kent,The Watercolor Art of Roy M. Mason
+E24,SKILL AND HOBBIES,Bonnie Prudden,The Dancer & the Gymnast
+E25,SKILL AND HOBBIES,Walter Ho Buchsbaum,Advances in Medical Electronics
+E26,SKILL AND HOBBIES,Bern Dibner,Oersted & the Discovery of Electromagnetism
+E27,SKILL AND HOBBIES,Mike Bay; James S. Boyd,What Can Additives Do for Ruminants?; Which Feed Bunk for You
+E28,SKILL AND HOBBIES,John R. Sargent,Where to Aim Your Planning
+E29,SKILL AND HOBBIES,Edward A. Walton,On Education for the Interior Designer
+E30,SKILL AND HOBBIES,Anonymous,The Attack on Employee Services
+E31,SKILL AND HOBBIES,Jim Dee; George Laycock,Expanding Horizons; The Challenge
+E32,SKILL AND HOBBIES,E. J. Tangerman,Which Way Up. Technical or Management?
+E33,SKILL AND HOBBIES,Robert Gray; Chet Cunningham,"Fifty Houses, One Tank; Truck Talk"
+E34,SKILL AND HOBBIES,Anonymous,The New Look in Signs
+E35,SKILL AND HOBBIES,Anonymous,The Industrial Revolution in Housing
+E36,SKILL AND HOBBIES,Ethel Norling,Renting a Car in Europe
+F01,POPULAR LORE,Rosemary Blackmon,How Much Do You Tell When You Talk?
+F02,POPULAR LORE,Glenn Infield,America's Secret Poison Gas Tragedy
+F03,POPULAR LORE,Nathan Rapport,I've Been Here Before
+F04,POPULAR LORE,Ruth F. Rosevear,North Country School Cares for the Whole Child
+F05,POPULAR LORE,Richard S. Allen,When Fogg Flew the Mail
+F06,POPULAR LORE,Alice Ho Austin; Harold P. Winchester,Let's Discuss Retirement; What It Means to be Creative
+F07,POPULAR LORE,Marvin Sentnor and Stephen Hult; Ho Walter Yoder,How to Have a Successful Honeymoon; Attitudes Toward Nudity
+F08,POPULAR LORE,Philip Reaves,Who Rules the Marriage Bed?
+F09,POPULAR LORE,David Martinson; Isel D. Rugget,Fantastic Life & Death of the Golden Prostitute; When It Comes to Carpets
+F10,POPULAR LORE,Jack Kaplan,Therapy by Witchcraft
+F11,POPULAR LORE,Lillian Pompian,Tooth-Straightening Today
+F12,POPULAR LORE,Marian Neater,New Methods of Parapsychology.
+F13,POPULAR LORE,Orlin J. Scoville,Part-time Farming
+F14,POPULAR LORE,Harold Rosenberg,The Trial and Eichmann
+F15,POPULAR LORE,John A. O'Brien,Let's Take Birth Control Out of Politics
+F16,POPULAR LORE,James Boylan,Mutiny
+F17,POPULAR LORE,John Harnsberger and Robert P. Wilkins,Transportation on the Northern Plains
+F18,POPULAR LORE,Bell I. Willy,Home Letters of Johnny Reb & Billy Yank
+F19,POPULAR LORE,Tristram P. Coffin,Folklore in the American Twentieth Century
+F20,POPULAR LORE,Kenneth Allsop,The Bootleggers and Their Era
+F21,POPULAR LORE,Joseph Bernstein; L. Don Leet,Giant Waves; Introduction; The Restless Earth and Its Interiors
+F22,POPULAR LORE,Booton Herndon,"From Custer to Korea, the 7th Cavalry"
+F23,POPULAR LORE,Barry Goldwater,A Foreign Policy for America
+F24,POPULAR LORE,Peter J. White,Report on Laos
+F25,POPULAR LORE,David Boroff,Jewish Teen-Age Culture
+F26,POPULAR LORE,Amy Lathrop,Pioneer Remedies from Western Kansas
+F27,POPULAR LORE,Creighton Churchill,A Notebook for the Wines of France
+F28,POPULAR LORE,Frank O. Gatell,Doctor Palfrey Frees His Slaves
+F29,POPULAR LORE,Douglass Cater,The Kennedy Look in the Arts
+F30,POPULAR LORE,Frederic A Birmingham,The Ivy League Today
+F31,POPULAR LORE,Edward Do Radin,Lizzie Borden: The Untold Story
+F32,POPULAR LORE,Florence M. Read,The Story of Spelman College
+F33,POPULAR LORE,James Be Conant,Slurs and Suburbs
+F34,POPULAR LORE,Frederic R. Senti and W. Dayton Maclay ,Age-old uses of Seeds and Some New Ones
+F35,POPULAR LORE,Ramon F. Adams,The Old-time Cowhand
+F36,POPULAR LORE,Robert Easton and Mackenzie Brown,Lord of Beasts
+F37,POPULAR LORE,Samuel M. Cavert,On the Road to Christian Unity
+F38,POPULAR LORE,Robert Smith,Baseball in America
+F39,POPULAR LORE,Clark E. Vincent,Unmarried mothers
+F40,POPULAR LORE,William Greenleaf,Monopoly on Wheels
+F41,POPULAR LORE,George W. Oakes,Turn Right at the Fountain
+F42,POPULAR LORE,James Baldwin,Nobody Knows My Name
+F43,POPULAR LORE,Frank Getlein and Harold C. Gardiner,"Movies, Morals, and Art"
+F44,POPULAR LORE,Gibson Winter,The Suburban Captivity of the Churches
+F45,POPULAR LORE,Paul C. Phillips,The Fur Trade
+F46,POPULAR LORE,Russell Baker,An American in Washington
+F47,POPULAR LORE,Clara L. Simerville,Home Visits Abroad
+F48,POPULAR LORE,Paul Ramsey,Christian Ethics & the Sit-In
+G01,BELLES-LETTRES,Edward P. Lawton,Northern Liberals & Southern Bourbons
+G02,BELLES-LETTRES,Arthur S. Miller,Toward a Concept of National Responsibility
+G03,BELLES-LETTRES,Peter Wyden,The Chances of Accidental War
+G04,BELLES-LETTRES,Eugene Burdick,The Invisible Aborigine
+G05,BELLES-LETTRES,Terence O'Donnell,Evenings at the Bridge
+G06,BELLES-LETTRES,Ruth Berges; Henry W. Koller,"William Steinberg, Pittsburgh's Dynamic Conductor; German Youth Looks to the Future"
+G07,BELLES-LETTRES,Richard B. Morris,Seven Who Set Our Destiny
+G08,BELLES-LETTRES,Frank Murphy,New Southern Fiction: Urban or Agrarian?
+G09,BELLES-LETTRES,Selma J. Cohen,Avant-Garde Choreography
+G10,BELLES-LETTRES,Clarence Streit,How the Civil War Kept You Sovereign
+G11,BELLES-LETTRES,Frank Oppenheimer,Science and Fear
+G12,BELLES-LETTRES,Tom F. Driver,Beckett by the Madeleine
+G13,BELLES-LETTRES,Charles Glicksberg,Sex in Contemporary Literature
+G14,BELLES-LETTRES,Helen H. Santmeyer,There Were Fences
+G15,BELLES-LETTRES,Howard Nemerov,Themes and Methods: Early Storie of Thomas Mann
+G16,BELLES-LETTRES,John F. Hayward,Mimesis & Symbol in the Arts
+G17,BELLES-LETTRES,Randall Stewart,"A Little History, a Little Honesty"
+G18,BELLES-LETTRES,Charles W. Stork,Verner von Heidenstam
+G19,BELLES-LETTRES,R. F. Shaw,The Private Eye
+G20,BELLES-LETTRES,"Dan McLachlan, Jr.",Communication Networks & Monitoring
+G21,BELLES-LETTRES,Brainard Cheney,Christianity & the Tragic Vision
+G22,BELLES-LETTRES,Kenneth Reiner,Coping with Runaway Technology
+G23,BELLES-LETTRES,William C. Smith,Why Fear Ideas
+G24,BELLES-LETTRES,Sanchia Thayer,Personality & Moral Leadership
+G25,BELLES-LETTRES,Stanley Parry,The Restoration of Tradition
+G26,BELLES-LETTRES,Selma Fraiberg,Two Modern Incest Heroes
+G27,BELLES-LETTRES,Matthew Josephson,Jean H�lion. The Return from Abstract Art
+G28,BELLES-LETTRES,Arlin Turner,"William Faulkner, Southern Novelist"
+G29,BELLES-LETTRES,Anonymous,References for the Good Society
+G30,BELLES-LETTRES,Norwood R. Hanson,Copernican & Keplerian Astronomy
+G31,BELLES-LETTRES,Irving Fineman,Woman of Valor: Life of Henrietta Szold 1860-1945
+G32,BELLES-LETTRES,Finis Farr,Frank Lloyd Wright
+G33,BELLES-LETTRES,Virgilia Peterson,A Matter of Life and Death
+G34,BELLES-LETTRES,Harry Golden,Carl Sandburg
+G35,BELLES-LETTRES,Dwight D. Eisenhower,Peace With Justice
+G36,BELLES-LETTRES,DeWitt Copp & Marshall Peck,Betrayal at the UN
+G37,BELLES-LETTRES,Gordon L. Hall,Golden Boats from Burma
+G38,BELLES-LETTRES,Bertrand A. Goldgar,The Curse of Party
+G39,BELLES-LETTRES,Edward Jablonski,Harold Arlen Happy with the Blues
+G40,BELLES-LETTRES,Gene Fowler,Skyline: A Reporter's Reminiscences of the 1920s.
+G41,BELLES-LETTRES,Lillian R. Parka and Frances S. Leighton ,My Thirty Years Backstairs at the White House
+G42,BELLES-LETTRES,Harold D. Lasswell,Epilogue
+G43,BELLES-LETTRES,Robert E. Lane,The Liberties of Wit
+G44,BELLES-LETTRES,Newton Stallknecht,Ideas and Literature
+G45,BELLES-LETTRES,W. A. Swanberg,Citizen Hearst: A Biography of W. R. Hearst
+G46,BELLES-LETTRES,Henry R. Winkler,George Macaulay Trevelyan
+G47,BELLES-LETTRES,Carry Davis,The World Is My Country
+G48,BELLES-LETTRES,Francis F. McKinney,Education in Violence
+G49,BELLES-LETTRES,Paul van K. Thomson,"Francis Thompson, a Critical Biography"
+G50,BELLES-LETTRES,Curtis C. Davis,The King's Chevalier
+G51,BELLES-LETTRES,Ilka Chase,The Carthaginian Rose
+G52,BELLES-LETTRES,Robert L. Duncan,Reluctant General
+G53,BELLES-LETTRES,Bertram Lippincott,"Indians, Privateers, and High Society"
+G54,BELLES-LETTRES,Mabel W. Wheaton & LeGette Blythe,Thomas Wolfe & His Family
+G55,BELLES-LETTRES,Ralph E. Flanders,"Senator from Vermont,. 112"
+G56,BELLES-LETTRES,Keith F. McKean,The Moral Measure of Literature
+G57,BELLES-LETTRES,"Robin M. Williams, Jr.",Values & Modern Education in the United States
+G58,BELLES-LETTRES,North Callahan,Daniel Morgan
+G59,BELLES-LETTRES,Esther R. Clifford,A Knight of Great Renown
+G60,BELLES-LETTRES,Gertrude Berg & Cherney Berg,Molly and Me
+G61,BELLES-LETTRES,Donald A. White,Litus Saxonicum
+G62,BELLES-LETTRES,C. H. Cramer,Newton D. Baker
+G63,BELLES-LETTRES,George Steiner,The Death of Tragedy
+G64,BELLES-LETTRES,Mark Eccles,Shakespeare in Warwickshire
+G65,BELLES-LETTRES,Timothy P. Donovan,Henry Adams & Brooks Adams
+G66,BELLES-LETTRES,Van Wyck Brooks,From the Shadow of the Mountain
+G67,BELLES-LETTRES,Mark Schorer,Sinclair Lewis: An American Life
+G68,BELLES-LETTRES,Harris F. Fletcher,The Intellectual Development of John Milton
+G69,BELLES-LETTRES,Mark R. Hillegas,Dystopian Science Fiction
+G70,BELLES-LETTRES,Joseph W. Krutch,If You Don't Mind My Saying So
+G71,BELLES-LETTRES,Joseph Frank,Andr� Malraux: The Image of Man
+G72,BELLES-LETTRES,J W. Fulbright,For a Concert of Free
+G73,BELLES-LETTRES,Carolyn See,The Jazz Musician as Patchen's Hero
+G74,BELLES-LETTRES,John McCormick,The Confessions of Jean Jacques Krim
+G75,BELLES-LETTRES,George Garrett,A Wreath for Garibaldi
+H01,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S Dep't of Commerce,Handbook of Federal Aids to Communities
+H02,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Dep't of State,An Act for International Development
+H03,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. 87th Congress,House Document No. 487
+H04,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,R. I. Legislative Council,State Automobiles & Travel Allowances
+H05,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,R. I. Leglelative Council,Taxing of Movable Tangible Property
+H06,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,R. I. Development Council,"Annual Report, 1960"
+H07,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,R. I. Legislative Council,linlform Fiscal Year for Municipalities
+H08,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,"John A. Notte, Jr.",R. I. Governor's Proclamations
+H09,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. 87th Congress,"Public Laws 295, 300, 347"
+H10,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Dep't of Defense,Medicine in National Defense
+H11,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Dep't of Commerce,"1961 Reaearch Highlights, Nat'1 Bureau of Standards"
+H12,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. 87th Congress,Legislation on Foreign Rels
+H13,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. 87th Congreas,"Congressional Record: Extension of Remarks. May 2, 1961"
+H14,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,"U. S. Dep't of Health, Education & Welfare ",Grants-in-Aid and Other Financial Assistance Programs
+H15,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Office of Civil and Defence Mobilization,The Family Fallout Shelter
+H16,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Reports,"Cases AdJudged in the Supreme Court, October Tenm 1960"
+H17,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Reports,"Cases AdJudged in the Supreme Court, October Tenm 1959-60"
+H18,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Dean Rusk,The Department of State
+H19,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Peace Corps,Fact Book
+H20,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Dep't of Agriculture,Development Program for the National Forests
+H21,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Dwight D. Eisenhower,"Public Papers, 1960-61"
+H22,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Dep't of State,U. S. Treatiea and Other International Agreements
+H23,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Federal Communications Commiasion,Pederal Communications Commission Reports
+H24,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,U. S. Tresaury Dep't,Your Federal Income Tax
+H25,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Guggenheim Foundation,Report of the Secretary Gen'1
+H26,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Anonymous,A Brief Background of Brown & Sharpe
+H27,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Robert Leeson; Leesona Corporation,Leesona Corporation President's Report; More Efficient Production for Expanding Textile Markets
+H28,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Carleton College,Carleton College Bulletin
+H29,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Sprague Electric Company,Sprague Log
+H30,MISCELLANEOUS: GOVERNMENT & HOUSE ORGANS,Carnegie Foundation,"Annual Report of Year Ending June 30, 1961"
+J01,LEARNED,Cornell H. Mayer,Radio. Emission of the Moon and Planets
+J02,LEARNED,R. C. Binder et al.,1961 Heat Transfer & Fluid Mechanics Institute
+J03,LEARNED,Harry H. Hull,Normal Forces & Their Thermodynamic Significance
+J04,LEARNED,James A. Ibers et al.,Proton Magnetic Resonance Study
+J05,LEARNED,"John R. Van Wazer, ed.",Phosphorus and Its Compounds
+J06,LEARNED,Francis J. Johnston & John E. Willard,Exchange Reaction Between C12 and CC14
+J07,LEARNED,J. F. Vedder,Micrometeorites
+J08,LEARNED,LeRoy Fothergill,Biological Warfare
+J09,LEARNED,M. Yokayama et al,Chemical & Serological Characteristics
+J10,LEARNED,B. J. D. Meeuse,The Story of Pollination
+J11,LEARNED,Clifford H Pope,The Ciant Snakes
+J12,LEARNED,Richard F McLaughlin et al.,A Study of the Subgross Pulmonary Anatomy
+J13,LEARNED,S. Idell Pyle et al.,"Onsets, Completions & Spans"
+J14,LEARNED,Jacob Robbins et al.,The Thyroid-Stimulating Hormone
+J15,LEARNED,J. W. C. Hagstrom et. al.,Debilitating Muscular Weakness
+J16,LEARNED,A. N. Nagaraj & L. M. Black,Localization of Wound-Tumor Virus Antigen
+J17,LEARNED,E. Gellhorn,Prolegomena to a Theory of the Emotions
+J18,LEARNED,Kenneth Hoffman & Ray Kunze,Linear Algebra
+J19,LEARNED,Frederick Mosteller et al.,Probability with Statistical Applications
+J20,LEARNED,R. P. Jerrard,Inscribed Squares in Plane Curves
+J21,LEARNED,"C. R. Wylie, Jr.",Line Involutions in S3
+J22,LEARNED,"Max F. Millikan & Donald L. Blackmer, editors",The Emerging Nations
+J23,LEARNED,Joyce O. Hertzler,American Social Institutions
+J24,LEARNED,Howard J. Parad,Preventive Casework: Problems & Implications
+J25,LEARNED,Sister Claire M. Sawyer,Some Aspects of Fertility of a Tri-Racial Isolate
+J26,LEARNED,Frank Lorimer,Demographic Information on Tropical Africa
+J27,LEARNED,Dale L. Womble,Functional Marriage Course for the Already Married
+J28,LEARNED,"William H. Ittelson & Samuel B. Kutash, editors",Perceptual Changes in Psychopathology
+J29,LEARNED,Jesse W. Grimes & Wesley Allinsmith ,"Compulsivity, Anxiety & School Achievement"
+J30,LEARNED,Raymond J. Corsini,Roleplaying in Business & Industry
+J31,LEARNED,Harold Searles,Schizophrenic Communication
+J32,LEARNED,Hugh Kelly & Ted Ziehe,Glossary Lookup Made Easy
+J33,LEARNED,Ralph Bc Long,The Sentence & Tts Parts
+J34,LEARNED,H.A. Cleason,Review of African Language Studies
+J35,LEARNED,A. T. Kroeber,Semantic Contribution of Lexicostatistics
+J36,LEARNED,D. F. Fleming,The Cold War & Its Origins
+J37,LEARNED,Douglas Ashford,Elections' in Morocco: Progress or Confusion
+J38,LEARNED,Committee for Economic Development,Distressed Areas in a Growing Economy
+J39,LEARNED,William O'Connor,"Stocks, Wheat & Pharaohs"
+J40,LEARNED,James J. O'Leary,The outlook for Interest Rates in 1961
+J41,LEARNED,Allan J. Braff & Roger F. Miller,Wage-Price Policies Under Public Pressure
+J42,LEARNED,Morton A. Kaplan ~ Nicholas Katzenbach ,The Political Foundation of Internationa1 Law
+J43,LEARNED,Wallace Mendelson,Justices Black & Frankfurter
+J44,LEARNED,"J. Mitchell Reese, Jr,",Reorganization Transfers
+J45,LEARNED,Albert Schreiber et al.,Defense Procurement & Small Business
+J46,LEARNED,Irving Perluss,Agricultural Labor Disputes in California 1960
+J47,LEARNED,William S. Ragan,Teaching America's Children.
+J48,LEARNED,Paul Cooke,Desegregated Education in the Middle-South Region
+J49,LEARNED,Robert J. Havighurst,Social-Class Influences on American Education
+J50,LEARNED,James C. Bonbright,Principles of Public Utility Rates
+J51,LEARNED,Irving L. Horowitz,"Philosophy, Science & the Sociology of Knowledge"
+J52,LEARNED,Brand Blanshard,The Emotive Theory
+J53,LEARNED,William S. Haymond,Is Distance an Original Factor in Vision?
+J54,LEARNED,Chester G. Starr,The Origins of Greek Civilization 1100-650 B. C
+J55,LEARNED,Jim B. Pearson,The Maxwell Land Grant
+J56,LEARNED,Edwin L. Bigelow & Nancy H. Otis,"Manchester, Vermont, A Pleasant Land"
+J57,LEARNED,J. H. Hexter,Thomas More: on the Margins of Modernity
+J58,LEARNED,"John M, Ray",Rhode Island's Reactions to John Brown's Raid
+J59,LEARNED,Clement Greenberg,Collage
+J60,LEARNED,Robert A. Futterman,The Future of Our Cities
+J61,LEARNED,Allyn Cox,Completing & Restoring the Capitol Frescos
+J62,LEARNED,Jimmy Ernst,A Letter to Artists of the Soviet Union
+J63,LEARNED,John H. Schaar,"Escape from Authority, Perspectives of Erich Fromm"
+J64,LEARNED,Katherine G. McDonald,Figures of Rebellion
+J65,LEARNED,Samuel Hynes,The Pattern of Hardy's Poetry
+J66,LEARNED,Kenneth Rexroth,Disengagament: The Art of the Beat Generation
+J67,LEARNED,William Whallon,The Diction of Beowulf
+J68,LEARNED,Charles R. Forker,The Language of Hands in Great Expectations
+J69,LEARNED,I. B. M. Corporation,"IBM 7070, Autocoder Reference Manual"
+J70,LEARNED,Ross E. McKinney & Howard Edde,Aerated Lagoon for Suburban Sewage Disposal
+J71,LEARNED,Thomas D. McGrath,Submarine Defense
+J72,LEARNED,Mellon Institute,"Annual Report; 1960, Independent Research"
+J73,LEARNED,Nat'l Research Council,Directory of Continuing Numerical Data Projects
+J74,LEARNED,Harlan W. Nelson,Food Preservation by Ionizing Radiation
+J75,LEARNED,W. K. Asbeck,Forces in Coatings Removal Knife Cutting Method
+J76,LEARNED,"Joel Frados, editor",Survey of Foamed Plastics
+J77,LEARNED,"William D. Appel, editor",1961 Technical Manual of American Ass'n of Textile Chemists & Colorists
+J78,LEARNED,Paul J. Dolon & Wilfrid F. Niklas ,Gain & Resolution of Fiber Optic Intensifier
+J79,LEARNED,Rutherford Aris,The O'ptim.A1 Design of Chemical Reactors
+J80,LEARNED,C. J. Savant Jr. & R. C. Howard,Principles of Inertial Navigation
+K01,FICTION: GENERAL,Christopher Davis,First Family
+K02,FICTION: GENERAL,Clayton C. Barbeau,The Ikon
+K03,FICTION: GENERAL,Tristram Coffin,Not to the Swift
+K04,FICTION: GENERAL,W. E. B. Du Bois,Worlds of Color
+K05,FICTION: GENERAL,David Stacton,The Judges of the Secret Court
+K06,FICTION: GENERAL,Louis Zara,Dark Rider
+K07,FICTION: GENERAL,Francis Pollini,Night
+K08,FICTION: GENERAL,Guy Endore,Voltaire! Voltaire!
+K09,FICTION: GENERAL,Howard Fast,April Morning
+K10,FICTION: GENERAL,Gladys H. Barr,The Master of & Geneva
+K11,FICTION: GENERAL,Robert Penn Warren,Wilderness
+K12,FICTION: GENERAL,Gerald Green,The Heartless Light
+K13,FICTION: GENERAL,William Maxwell,The Chateau
+K14,FICTION: GENERAL,Irving Stone,The Agony & the Ecstasy
+K15,FICTION: GENERAL,Ann Hebson,The Lattimer Legend
+K16,FICTION: GENERAL,Stephen Longstreet,Eagles Where I Walk
+K17,FICTION: GENERAL,Leon Uris,Mila 8
+K18,FICTION: GENERAL,John Dos Passos,Midcentury
+K19,FICTION: GENERAL,Robert J Duncan,The Voice of Strangers
+K20,FICTION: GENERAL,Guy Bolton,The Olympians
+K21,FICTION: GENERAL,Bruce Palmer,My Brother's Keeper
+K22,FICTION: GENERAL,John Cheever,The Brigadier & the Golf Widow
+K23,FICTION: GENERAL,Prieda Arkin,The Tight of the Sea
+K24,FICTION: GENERAL,W. H. Gass,The Pedersen Kid
+K25,FICTION: GENERAL,Arthur Miller,The Prophecy
+K26,FICTION: GENERAL,Jane G. Rushing,Against the Moon
+K27,FICTION: GENERAL,E. Lucas Myers,The Vindication of Dr. Nestor
+K28,FICTION: GENERAL,Sallie Bingham,Moving Day
+K29,FICTION: GENERAL,Marvin Schiller,The Sheep's in the Meadow.
+L01,FICTION: MYSTERY,Winfred Van Atta,Shock Treatment
+L02,FICTION: MYSTERY,A. A. Fair,Bachelors Get Lonely
+L03,FICTION: MYSTERY,Amber Dean,Encounter With Evil
+L04,FICTION: MYSTERY,David Alexander,Bloodstain
+L05,FICTION: MYSTERY,Brett Halliday,The Careless Corpse
+L06,FICTION: MYSTERY,Thomas B. Dewey,Hunter at Large
+L07,FICTION: MYSTERY,Genevieve Golden,Deadlier Than the Male
+L08,FICTION: MYSTERY,Dell Shannon,The Ace of Spades
+L09,FICTION: MYSTERY,Mignon G. Eberhart,"The Cup, the Blade or the Swords"
+L10,FICTION: MYSTERY,Harry Bleaker,Impact
+L11,FICTION: MYSTERY,Hampton Stone,The Man Who Looked Death in the Eye
+L12,FICTION: MYSTERY,Whit Masterson ,"Evil Come, Evil Go"
+L13,FICTION: MYSTERY,Dolores Hitchens,Footsteps in the Night
+L14,FICTION: MYSTERY,Frances & Richard Lockridge,Murder Has Its Points
+L15,FICTION: MYSTERY,Doris M. Disney,Mrs. Meeker's Money
+L16,FICTION: MYSTERY,Alex Gordon,The Cipher
+L17,FICTION: MYSTERY,Brent James,Night of the Kill
+L18,FICTION: MYSTERY,George H. Coxe,Error of Judgment
+L19,FICTION: MYSTERY,Brad Williams,Make a Killing
+L20,FICTION: MYSTERY,Ed Lacy,Death by the Numbers
+L21,FICTION: MYSTERY,Helen McCloy,The Black Disk
+L22,FICTION: MYSTERY,S. L. M. Barlow,Monologue of Murder
+L23,FICTION: MYSTERY,J. W. Rose,Try My Sample Murders
+L24,FICTION: MYSTERY,Fredric Brown,The Murders
+M01,FICTION: SCIENCE,Robert Heinlein ,Stranger in a Strange Land
+M02,FICTION: SCIENCE,Philip J. Farmer,The Lovers
+M03,FICTION: SCIENCE,James Blish,The Star Dwellers
+M04,FICTION: SCIENCE,Jim Harmon,The Planet with No Nightmare
+M05,FICTION: SCIENCE,Anne McCaffrey,The Ship Who Sang
+M06,FICTION: SCIENCE,Cordwainer Smith ,A Planet Named Shayol
+N01,FICTION: ADVENTURE,Wayne D. Overholser,The Killer Marshall
+N02,FICTION: ADVENTURE,Clifford Irving ,The Valley
+N03,FICTION: ADVENTURE,Cliff Farrell ,The Trail of the Tattered Star
+N04,FICTION: ADVENTURE,James D. Horan,The Shadow Catcher
+N05,FICTION: ADVENTURE,Richard Ferber,Bitter Valley
+N06,FICTION: ADVENTURE,Thomas Anderson,Here Comes Pete Now
+N07,FICTION: ADVENTURE,Todhunter Ballard,The Night Riders
+N08,FICTION: ADVENTURE,Mary Savage,Just for Tonight
+N09,FICTION: ADVENTURE,Jim Thompson,The Transgressors
+N10,FICTION: ADVENTURE,Joseph Chadwick,No Land Is Free
+N11,FICTION: ADVENTURE,Gene Caesar,Rifle for Rent
+N12,FICTION: ADVENTURE,Edwin Booth,Outlaw Town
+N13,FICTION: ADVENTURE,Martha F. McKeown,Mountains Ahead
+N14,FICTION: ADVENTURE,Peter Field,Rattlesnake Ridge
+N15,FICTION: ADVENTURE,Donald J. Plantz,Sweeney Squadron
+N16,FICTION: ADVENTURE,Ralph J. Salisbury,On the Old Sante Fe Trail to Siberia
+N17,FICTION: ADVENTURE,Richard S. Prather,The Bawdy Beautiful
+N18,FICTION: ADVENTURE,Peter Bains,With Women Education Pays off
+N19,FICTION: ADVENTURE,David Jackson,The English Gardens
+N20,FICTION: ADVENTURE,T. C. McClary,The Flooded Dearest
+N21,FICTION: ADVENTURE,C. T. Sommers,The Beautiful Mankillers of Eromonga
+N22,FICTION: ADVENTURE,Gordon Johnson,A Matter of Curiosity.
+N23,FICTION: ADVENTURE,Wheeler Hall,Always Shoot to Kill
+N24,FICTION: ADVENTURE,T. K. Brown III,The Fifteenth Station
+N25,FICTION: ADVENTURE,Wesley Newton,Aid & Comfort to the Enemy
+N26,FICTION: ADVENTURE,Paul Brock,Toughest Lawman in the Old West
+N27,FICTION: ADVENTURE,James Hines & James Morris,Just Any Girl
+N28,FICTION: ADVENTURE,Ralph Grimshaw,"Mrs. Hacksaw, New Orleans Society Killer"
+N29,FICTION: ADVENTURE,Harlan Ellison,Riding the Dark Train Out
+P01,FICTION: ROMANCE,Octavia Waldo,A Cup of the Sun
+P02,FICTION: ROMANCE,Ann Ritner,Seize a Nettle
+P03,FICTION: ROMANCE,Clark McMeekin,The Fairbrothers
+P04,FICTION: ROMANCE,B. J. Chute,The Moon & the Thorn
+P05,FICTION: ROMANCE,Allan R. Bosworth,The Crows of Edwina Hill
+P06,FICTION: ROMANCE,Richard Tiernan,Land of the Silver Dollar
+P07,FICTION: ROMANCE,Vina Delmar,The Big Family
+P08,FICTION: ROMANCE,R. Leslie Course,With Gall & Honey
+P09,FICTION: ROMANCE,Jesse Hill Ford,Mountains of Gilead
+P10,FICTION: ROMANCE,Jay Williams,The Forger
+P11,FICTION: ROMANCE,Bessie Breuer,Take Care of My Roses
+P12,FICTION: ROMANCE,Morley Callaghan,A Passion in Rome
+P13,FICTION: ROMANCE,Frank B. Hanes,The Fleet Rabble
+P14,FICTION: ROMANCE,"Livingston Biddle, Jr.",Sam Bentley's Island
+P15,FICTION: ROMANCE,Loretta Burrough,The Open Door
+P16,FICTION: ROMANCE,Margery F. Brown,A Secret Between Friends
+P17,FICTION: ROMANCE,Al Hine,The Huntress
+P18,FICTION: ROMANCE,Anonymous,No Room in My Heart to For Give
+P19,FICTION: ROMANCE,Anonymous,This Cancer Victim May Ruin My Life
+P20,FICTION: ROMANCE,Spencer Norris,Dirty Dog Inn
+P21,FICTION: ROMANCE,Elizabeth Spencer,The White Azalea
+P22,FICTION: ROMANCE,Anonymous,A Husband Stealer from Way Back
+P23,FICTION: ROMANCE,Barbara Robinson,Something Very Much in Common
+P24,FICTION: ROMANCE,Samuel Elkin,The Ball Player
+P25,FICTION: ROMANCE,William Butler,The Pool at Ryusenji
+P26,FICTION: ROMANCE,Ervin D. Krause,The Snake
+P27,FICTION: ROMANCE,Lee McGiffin,Measure of a Man
+P28,FICTION: ROMANCE,Carol Hoover,The Shorts on the Bedroom Floor
+P29,FICTION: ROMANCE,Robert Carson,My Hero
+R01,HUMOR,Anita Loos,No Mother to Guide Her
+R02,HUMOR,Jean Mercier,"Whatever You Do, Don't Panic"
+R03,HUMOR,Patrick Dennis,Little Me
+R04,HUMOR,Edward Streeter,The Chairman of the Bored
+R05,HUMOR,Evan Esar,Humorous English
+R06,HUMOR,James Thurber,"The Future, If Any, of Comedy"
+R07,HUMOR,John H. Wildman,Take It Off
+R08,HUMOR,Leo Lemon,Catch Up With; Something to Talk About
+R09,HUMOR,S. J. Perelman,The Rising Gorge
