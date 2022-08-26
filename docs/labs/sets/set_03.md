@@ -1030,3 +1030,431 @@ ggplot(plot_prob, aes(x = confidence, y = probability, color = feature)) +
 boosting facetted by disciplinary
 category.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-53-1.png)
 
+## Lab 9: Multi-Dimensional Analysis
+
+Multi-Dimensional Analysis (MDA) is a process made up of 4 main steps:
+
+1.  Identification of relevant variables
+2.  Extraction of factors from variables
+3.  Functional interpretation of factors as dimensions
+4.  Placement of categories on the dimensions
+
+It is also a specific application of factor analysis. Factor analysis is a method(s) for reducing complexity in linguistic data, which can identify underlying principles of systematic variation ([Biber 1988](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjJ5ZqokOX5AhWYjIkEHRvuBGcQFnoECBsQAQ&url=https%3A%2F%2Fbooks.google.com%2Fbooks%2Fabout%2FVariation_Across_Speech_and_Writing.html%3Fid%3DCVTPaSSYEroC&usg=AOvVaw2kUYzxQK7CHfV2hFqJSyBx)).
+
+``` r
+library(cmu.textstat)
+library(tidyverse)
+library(quanteda)
+library(nFactors)
+```
+
+### Case 1: Biber Tagger
+
+In order to carry out MDA, we would like to have 5 times as many observations than variables. This generally precludes carrying out MDA (or factor analysis) with simple word counts. We need data that has, in some way, been tagged.
+
+For this lab, we will use from the R package **[pseudobibeR](https://cmu-textstat-docs.readthedocs.io/en/latest/pseudobibeR/pseudobibeR.html)**, which emulates the classification system that Biber has used and reported in much of his research. The package aggregates the lexicogrammatical and functional features widely used for text-type, register, and genre classification tasks.
+
+The scripts are not really taggers. Rather, they use **udpipe** or **spaCy** part-of-speech tagging and dependency parsing to summarize patterns. They organize [67 categories](https://cmu-textstat-docs.readthedocs.io/en/latest/pseudobibeR/pseudobibeR.html).
+
+
+For this lab, you won’t need to use the package functions. But if you’d like to try it out for any of your projects, you can follow [the instructions](https://cmu-textstat-docs.readthedocs.io/en/latest/pseudobibeR/pseudobibeR.html).
+
+#### The Brown Corpus
+
+Let’s start with data from [the Brown Corpus](https://en.wikipedia.org/wiki/Brown_Corpus), which has been prepared. The Brown family of corpora is discussed on pg. 16 of Brezina. You can also find it here:
+
+<http://icame.uib.no/brown/bcm.html>
+
+``` r
+bc <- read_csv("https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/data-csv/bc_biber.csv",
+    show_col_types = FALSE)
+
+bc_meta <- read_csv("https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/data-csv/brown_meta.csv",
+    show_col_types = FALSE)
+```
+
+We will join the data with the metadata, in order to calculate dimension scores by register and evaluate them. Note that it **must** be formatted as a factor. For convenience sake, we’ll move the file names to the row names and put our factor as the first column.
+
+``` r
+bc <- bc %>%
+    left_join(dplyr::select(bc_meta, doc_id, text_type)) %>%
+    mutate(text_type = as.factor(text_type)) %>%
+    column_to_rownames("doc_id") %>%
+    dplyr::select(text_type, everything())
+```
+
+#### Correlation matrix
+
+Before calculating our factors, let’s check a correlation matrix. Note
+that we’re dropping the first (factor) column.
+
+``` r
+bc_cor <- cor(bc[-1], method = "pearson")
+```
+
+``` r
+corrplot::corrplot(bc_cor, type = "upper", order = "hclust", tl.col = "black",
+    tl.srt = 45, diag = F, tl.cex = 0.5)
+```
+
+![Correlation matrix of lexico-grammatical
+categories.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-105-1.png)
+
+#### Determining number of factors
+
+Typically, the number of factors is chosen after inspecting a scree
+plot.
+
+``` r
+screeplot_mda(bc)
+```
+
+![Scree plot of
+factors.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-106-1.png)
+
+A common method for interpreting a scree plot is to look for the “bend” in the elbow, which would be 3 or 4 factors in this case. We can also look at the results of other kinds of solutions like optimal coordinates, which measures the gradients associated with eigenvalues
+and their preceding coordinates, and acceleration factor, which determines the coordinate where the slope of the curve changes most abruptly. In this case OC suggests 6 factors and AF 1.
+
+For the purposes of this exercise, we’ll start with 3 factors.
+
+#### Calculating factor loadings and MDA scores
+
+In factor analysis factors so that they pass through the middle of the relevant variables. For linguistic variable it is conventional to use a promax rotation (see Brezina pgs. 164-167). There is also a nice explanation of rotations here:
+
+<https://personal.utdallas.edu/~herve/Abdi-rotations-pretty.pdf>
+
+To place our categories along the dimensions, data is standardized by converting to z-scores. For each text, a dimension score is calculated by summing all of the high-positive variables subtracting all of the high-negative variables. Then, the mean is calculated for each category.
+
+For these calculations, we will use the `mda_loadings()` function.
+
+``` r
+bc_mda <- mda_loadings(bc, n_factors = 3)
+```
+
+We can access factor loadings and group means through attributes: `attr(bc_mda, "loadings")`
+
+|                              | Factor1 | Factor2 |Factor3|
+|------------------------------|---------|---------|-------|
+| f\_01\_past\_tense              | -0.15   | 1.10    | 0.16  |
+| f\_02\_perfect\_aspect          | 0.05    | 0.52    | 0.28  |
+| f\_03\_present\_tense           | 0.60    | -1.06   | -0.04 |
+| f\_04\_place\_adverbials        | 0.17    | 0.42    | -0.11 |
+| f\_05\_time\_adverbials         | 0.23    | 0.32    | 0.06  |
+| f\_06\_first\_person\_pronouns   | 0.44    | 0.15    | 0.22  |
+| f\_07\_second\_person\_pronouns  | 0.66    | -0.11   | -0.14 |
+| f\_08\_third\_person\_pronouns   | 0.19    | 0.73    | 0.16  |
+| f\_09\_pronoun\_it              | 0.32    | 0.11    | 0.39  |
+| f\_10\_demonstrative\_pronoun   | 0.36    | -0.15   | 0.37  |
+| f\_11\_indefinite\_pronouns     | 0.49    | 0.30    | 0.26  |
+| f\_12\_proverb\_do              | 0.54    | 0.04    | 0.14  |
+| f\_13\_wh\_question             | 0.39    | 0.10    | 0.05  |
+| f\_14\_nominalizations         | -0.51   | -0.39   | 0.21  |
+| f\_15\_gerunds                 | -0.02   | -0.16   | -0.03 |
+| f\_16\_other\_nouns             | -0.29   | -0.32   | -0.77 |
+| f\_17\_agentless\_passives      | -0.48   | -0.21   | 0.00  |
+| f\_18\_by\_passives             | -0.45   | -0.16   | 0.02  |
+| f\_19\_be\_main\_verb            | 0.46    | -0.09   | 0.41  |
+| f\_20\_existential\_there       | 0.13    | 0.13    | 0.30  |
+| f\_21\_that\_verb\_comp          | -0.18   | 0.08    | 0.44  |
+| f\_22\_that\_adj\_comp           | 0.01    | -0.10   | 0.38  |
+| f\_23\_wh\_clause               | 0.36    | 0.23    | 0.22  |
+| f\_24\_infinitives             | 0.10    | 0.01    | 0.24  |
+| f\_25\_present\_participle      | 0.12    | 0.48    | -0.03 |
+| f\_27\_past\_participle\_whiz    | -0.53   | 0.08    | -0.11 |
+| f\_28\_present\_participle\_whiz | -0.22   | 0.03    | -0.16 |
+| f\_30\_that\_obj                | 0.00    | -0.11   | 0.26  |
+| f\_31\_wh\_subj                 | -0.14   | -0.10   | 0.14  |
+| f\_32\_wh\_obj                  | -0.03   | 0.04    | 0.27  |
+| f\_33\_pied\_piping             | -0.17   | -0.17   | 0.34  |
+| f\_34\_sentence\_relatives      | -0.21   | -0.07   | 0.08  |
+| f\_35\_because                 | 0.33    | -0.13   | 0.15  |
+| f\_36\_though                  | -0.20   | 0.16    | 0.32  |
+| f\_37\_if                      | 0.53    | -0.27   | 0.12  |
+| f\_38\_other\_adv\_sub           | 0.02    | -0.06   | 0.33  |
+| f\_39\_prepositions            | -0.68   | -0.23   | -0.06 |
+| f\_40\_adj\_attr                | -0.41   | -0.47   | 0.18  |
+| f\_41\_adj\_pred                | 0.14    | 0.16    | 0.26  |
+| f\_42\_adverbs                 | 0.57    | 0.21    | 0.51  |
+| f\_43\_type\_token              | 0.14    | 0.12    | -0.06 |
+| f\_44\_mean\_word\_length        | -0.65   | -0.36   | 0.04  |
+| f\_45\_conjuncts               | -0.20   | -0.41   | 0.37  |
+| f\_46\_downtoners              | 0.13    | -0.03   | 0.38  |
+| f\_47\_hedges                  | 0.40    | 0.10    | 0.24  |
+| f\_48\_amplifiers              | 0.04    | -0.11   | 0.36  |
+| f\_49\_emphatics               | 0.41    | -0.26   | 0.26  |
+| f\_50\_discourse\_particles     | 0.41    | 0.07    | 0.00  |
+| f\_51\_demonstratives          | -0.10   | -0.31   | 0.31  |
+| f\_52\_modal\_possibility       | 0.45    | -0.39   | 0.29  |
+| f\_53\_modal\_necessity         | 0.10    | -0.36   | 0.19  |
+| f\_54\_modal\_predictive        | 0.43    | -0.12   | -0.09 |
+| f\_55\_verb\_public             | 0.07    | 0.38    | 0.09  |
+| f\_56\_verb\_private            | 0.25    | 0.44    | 0.44  |
+| f\_57\_verb\_suasive            | -0.12   | 0.03    | 0.03  |
+| f\_58\_verb\_seem               | -0.02   | 0.13    | 0.39  |
+| f\_59\_contractions            | 0.61    | 0.25    | -0.03 |
+| f\_60\_that\_deletion           | 0.25    | 0.26    | 0.03  |
+| f\_63\_split\_auxiliary         | -0.04   | -0.07   | 0.37  |
+| f\_64\_phrasal\_coordination    | -0.15   | -0.39   | -0.02 |
+| f\_65\_clausal\_coordination    | 0.47    | 0.37    | 0.28  |
+| f\_66\_neg\_synthetic           | 0.07    | 0.32    | 0.35  |
+| f\_67\_neg\_analytic            | 0.57    | 0.20    | 0.38  |
+
+#### Plotting the results
+
+The means are conventionally positioned on a stick plot of the kind
+Brezina shows on pg. 169.
+
+``` r
+mda.biber::stickplot_mda(bc_mda, n_factor = 1)
+```
+
+![Deminsion score means by discipline plotted along Factor
+1.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-109-1.png)
+
+We can also show the same plot with the factor loadings.
+
+``` r
+mda.biber::heatmap_mda(bc_mda, n_factor = 1)
+```
+
+![Deminsion score means by discipline plotted along Factor
+1.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-110-1.png)
+
+#### Evaluating MDA
+
+Typically, MDA is evaluated using ANOVA, reporting the *F* statistic,
+degrees of freedom, and R-squared. We can extract that information from
+a linear model.
+
+``` r
+f_aov <- aov(Factor1 ~ group, data = bc_mda)
+broom::tidy(f_aov)
+#> # A tibble: 2 × 6
+#>   term         df  sumsq meansq statistic   p.value
+#>   <chr>     <dbl>  <dbl>  <dbl>     <dbl>     <dbl>
+#> 1 group        14 51553.  3682.      32.1  3.49e-60
+#> 2 Residuals   485 55651.   115.      NA   NA
+```
+
+``` r
+f1_lm <- lm(Factor1 ~ group, data = bc_mda)
+names(f1_lm$coefficients) <- names(coef(f1_lm)) %>%
+    str_remove("group")
+f2_lm <- lm(Factor2 ~ group, data = bc_mda)
+names(f2_lm$coefficients) <- names(coef(f2_lm)) %>%
+    str_remove("group")
+f3_lm <- lm(Factor3 ~ group, data = bc_mda)
+names(f3_lm$coefficients) <- names(coef(f3_lm)) %>%
+    str_remove("group")
+```
+
+    #> Warning in knit_print.huxtable(x, ...): Unrecognized output format "gfm-yaml". Using `to_screen` to print huxtables.
+    #> Set options("huxtable.knitr_output_format") manually to "latex", "html", "rtf", "docx", "pptx", "md" or "screen".
+
+                         ──────────────────────────────────────────────────────────────────────────
+                                                           Factor 1      Factor 2      Factor 3    
+                                                        ───────────────────────────────────────────
+                           (Intercept)                     -1.24         -0.81          1.73 *     
+                           FICTION: ADVENTURE              13.62 ***     14.80 ***     -0.81       
+                           FICTION: GENERAL                11.73 ***     13.40 ***     -0.23       
+                           FICTION: MYSTERY                20.43 ***     14.38 ***      3.10       
+                           FICTION: ROMANCE                21.90 ***     14.09 ***      2.93 *     
+                           FICTION: SCIENCE                16.03 ***      8.13 **       5.42       
+                           HUMOR                           12.25 **       7.28 ***      2.94       
+                           LEARNED                         -9.66 ***     -7.75 ***     -0.11       
+                           MISCELLANEOUS: GOVERNMENT &    -14.14 ***     -9.57 ***     -9.19 ***   
+                           HOUSE ORGANS                                                            
+                           POPULAR LORE                    -1.21         -0.58         -2.37       
+                           PRESS: EDITORIAL                 3.17         -2.28         -0.87       
+                           PRESS: REPORTAGE                -6.94 ***      0.71        -10.37 ***   
+                           PRESS: REVIEWS                  -0.57         -2.89         -3.85 *     
+                           RELIGION                         3.33         -3.82 *        4.29 *     
+                           SKILL AND HOBBIES               -0.51         -5.56 ***     -5.09 ***   
+                                                        ───────────────────────────────────────────
+                           DF                             485.00        485.00        485.00       
+                           R2                               0.48          0.66          0.27       
+                           F statistic                     32.09         67.70         13.00       
+                         ──────────────────────────────────────────────────────────────────────────
+                           *** p < 0.001; ** p < 0.01; * p < 0.05.                                 
+
+
+### Case 2: DocuScope
+
+Unlike the Biber tagger, [DocuScope](https://docuscospacy.readthedocs.io/en/latest/docuscope.html#categories) is a dictionary based tagger. It has been developed at CMU by David Kaufer and Suguru Ishizaki since the early 2000s.
+
+#### Load the dicitonary
+
+DocuScope is a very large dictionary (or lexicon) that organizes tens of millions of words and phrases into rhetorically oriented categories. It has some overlap with a few Biber’s functional categories (like hedges), but is fundamentally different, as it isn’t bases on parts-of-speech.
+
+The `ds_dict` is a small quanteda dictionary that organizes a reduced set of words of phrases (tens of thousands rather than tens of millions). Here is a sample from 3 of the categories:
+
+``` r
+ds_dict[1:3]
+#> Dictionary object with 3 key entries.
+#> - [AcademicTerms]:
+#>   - a chapter in, a couple, a declaration of, a detail, a distinction between, a domain, a force, a forced, a form of, a grade, a hint of, a home for, a hub, a kind of, a kind of a, a load, a loaded, a metaphor for, a mix of, a mixture of [ ... and 8,884 more ]
+#> - [AcademicWritingMoves]:
+#>   - . in this article ,, . in this paper, . this essay, . this paper, . this report, . this work, . to avoid, a better understanding, a common problem, a debate about, a debate over, a first step, a goal of, a great deal of attention, a huge problem, a key to, a major problem, a method of, a notion that, a number of studies [ ... and 1,141 more ]
+#> - [Character]:
+#>   - ; block, ; bring, ; call, ; center, ; check, ; chill, ; close, ; color, ; control, ; cook, ; cool, ; cover, ; cross, ; cut, ; design, ; discard, ; don, ; down, ; drain, ; e-mail [ ... and 18,754 more ]
+```
+
+## Tokenize the corpus
+
+Again, we will use the \*\*micusp_mini\*, and we’ll begin by tokenizing
+the data. Note that we’re retaining as much of the original data as
+possible including punctuation. This is because our dictionary includes
+punctuation marks in it’s entries.
+
+``` r
+micusp_tokens <- micusp_mini %>%
+    corpus() %>%
+    tokens(remove_punct = F, remove_numbers = F, remove_symbols = F, what = "word")
+```
+
+Next, we will use the **tokens_lookup()** function to count and
+categorize our features.
+
+``` r
+ds_counts <- micusp_tokens %>%
+    tokens_lookup(dictionary = ds_dict, levels = 1, valuetype = "fixed") %>%
+    dfm() %>%
+    convert(to = "data.frame") %>%
+    as_tibble()
+```
+
+Finally, we need to normalize the counts. Because DocuScope is not
+categorizing ALL of our tokens, we need a total count from the original
+tokens object.
+
+``` r
+tot_counts <- quanteda::ntoken(micusp_tokens) %>%
+    data.frame(tot_counts = .) %>%
+    tibble::rownames_to_column("doc_id") %>%
+    dplyr::as_tibble()
+
+ds_counts <- dplyr::full_join(ds_counts, tot_counts, by = "doc_id")
+```
+
+Now we can normalize by the total counts before preparing the data for
+factor analysis.
+
+``` r
+ds_counts <- ds_counts %>%
+    dplyr::mutate_if(is.numeric, list(~./tot_counts), na.rm = TRUE) %>%
+    dplyr::mutate_if(is.numeric, list(~. * 100), na.rm = TRUE) %>%
+    dplyr::select(-tot_counts)
+
+ds_counts <- ds_counts %>%
+    mutate(text_type = str_extract(doc_id, "^[A-Z]+")) %>%
+    mutate(text_type = as.factor(text_type)) %>%
+    column_to_rownames("doc_id")
+```
+
+#### Calculating factor loadings and MDA score
+
+Again, we will use 3 factors.
+
+``` r
+micusp_mda <- mda_loadings(ds_counts, n_factors = 3)
+```
+
+#### Evaluating MDA
+
+We can again check to see how explanatory our dimensions are.
+
+``` r
+f1_lm <- lm(Factor1 ~ group, data = micusp_mda)
+names(f1_lm$coefficients) <- names(coef(f1_lm)) %>%
+    str_remove("group")
+f2_lm <- lm(Factor2 ~ group, data = micusp_mda)
+names(f2_lm$coefficients) <- names(coef(f2_lm)) %>%
+    str_remove("group")
+f3_lm <- lm(Factor3 ~ group, data = micusp_mda)
+names(f3_lm$coefficients) <- names(coef(f3_lm)) %>%
+    str_remove("group")
+```
+
+
+                                  ─────────────────────────────────────────────────────────
+                                                   Factor 1      Factor 2      Factor 3    
+                                                ───────────────────────────────────────────
+                                    (Intercept)    -2.81 **       4.44 ***     -0.54       
+                                    CEE            -4.31 **      -1.25          0.17       
+                                    CLS             7.71 ***     -7.65 ***     -1.72       
+                                    ECO             0.40         -3.29          3.50 *     
+                                    EDU             5.82 ***     -2.86          2.97 *     
+                                    ENG            10.28 ***     -8.22 ***     -2.17       
+                                    HIS             4.81 **     -10.06 ***     -3.22 *     
+                                    IOE            -0.30         -4.06 *        3.40 *     
+                                    LIN             2.77         -0.53         -0.99       
+                                    MEC            -4.82 **      -1.33         -0.51       
+                                    NRE             0.20         -8.46 ***      3.03 *     
+                                    NUR             3.37 *       -3.37          5.23 ***   
+                                    PHI             9.49 ***     -1.62         -0.73       
+                                    PHY            -1.91         -1.06         -1.30       
+                                    POL             6.00 ***    -13.21 ***      1.47       
+                                    PSY             3.16 *       -1.35          0.07       
+                                    SOC             5.15 ***     -7.23 ***     -0.00       
+                                                ───────────────────────────────────────────
+                                    DF            153.00        153.00        153.00       
+                                    R2              0.65          0.51          0.39       
+                                    F statistic    17.49          9.77          6.01       
+                                  ─────────────────────────────────────────────────────────
+                                    *** p < 0.001; ** p < 0.01; * p < 0.05.                
+
+Column names: names, Factor 1, Factor 2, Factor 3
+
+#### Plotting the results
+
+And we can plot the first factor.
+
+``` r
+mda.biber::heatmap_mda(micusp_mda, n_factor = 1)
+```
+
+![Dimension score means by discipline plotted along Factor
+1.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-122-1.png)
+
+#### Interpreting the factors as dimensions
+
+The functional interpretation of factors as dimensions (Brezina pgs. 167-168) is probably the most challenging part of MDA. As analysts, we need to make sense out of why features (whether parts-of-speech, rhetorical categories, or other measures) are grouping together and
+contributing to the patterns of variation evident in products of the analysis.
+
+That interpretation usually involves giving names to the dimensions based on their constituent structures. In Biber’s original study, he called his first, most explanatory dimension Involved vs. Informational Production. At the positive (Involved) end of the dimension are telephone and face-to-face conversations. At the negative (Information) end are official documents and academic prose.
+
+Features with high positive loadings include private verbs (like *think*), contractions, and first and second person pronouns. Features with high negative loadings include nouns and propositional phrases. Biber concludes that these patterns reflect the communicative purposes
+of the registers. Ones that are more interactive and affective vs. others that are more instructive and informative.
+
+In order to understand how certain features are functioning, it is
+important to see how they are being used, which we can do effienciently
+with Key Words in Context (KWIC). Here we take “Confidence High” from
+the positive end of the dimension and “Academic Writing Moves” from the
+negative.
+
+``` r
+ch <- kwic(micusp_tokens, ds_dict["ConfidenceHigh"])
+
+awm <- kwic(micusp_tokens, ds_dict["AcademicWritingMoves"])
+```
+
+| docname     | from |   to | pre                            | keyword     | post                             | pattern        |
+|-------------|-----:|-----:|-------------------------------:|-------------|----------------------------------|----------------|
+| BIO.G0.02.1 |  191 |  191 | sympatry ; do these examples   | simply      | represent another head on the    | ConfidenceHigh |
+| BIO.G0.02.1 |  401 |  402 | speciation in this genus ,     | most likely | under sympatric conditions . The | ConfidenceHigh |
+| BIO.G0.02.1 |  708 |  708 | that this mechanism is not     | very        | efficient , and depends on       | ConfidenceHigh |
+| BIO.G0.02.1 | 1143 | 1143 | normal host species respond in | predictable | manners : choosing to mate       | ConfidenceHigh |
+| BIO.G0.02.1 | 1425 | 1426 | explored later ; however ,     | it is       | important to note here that      | ConfidenceHigh |
+| BIO.G0.02.1 | 1718 | 1718 | of finding a mate that         | knows       | the same song as you             | ConfidenceHigh |
+
+
+| docname     | from |   to | pre                             | keyword            | post                                 | pattern              |
+|-------------|-----:|-----:|--------------------------------:|--------------------|--------------------------------------|----------------------|
+| BIO.G0.02.1 |  258 |  260 | , yet another possible example  | has been described | by science , which may               | AcademicWritingMoves |
+| BIO.G0.02.1 |  594 |  596 | , this type of behavior         | has been observed  | in the indigobirds of Vidua          | AcademicWritingMoves |
+| BIO.G0.02.1 |  913 |  914 | ( Lonchura striata ) .          | They conducted     | a second experiment in 2000          | AcademicWritingMoves |
+| BIO.G0.02.1 |  939 |  940 | 1998 study . Their experiment   | was designed       | principally to test three hypotheses | AcademicWritingMoves |
+| BIO.G0.02.1 | 1019 | 1020 | , the Bengalese , finch         | were used          | . In the cross-foster experiments    | AcademicWritingMoves |
+| BIO.G0.02.1 | 1204 | 1205 | sometime before fledging - this | finding is         | also consistent with Payne et        | AcademicWritingMoves |
+
+
