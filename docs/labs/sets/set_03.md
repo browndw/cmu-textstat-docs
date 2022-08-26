@@ -1032,7 +1032,7 @@ category.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs
 
 ## Lab 9: Multi-Dimensional Analysis
 
-Multi-Dimensional Analysis (MDA) is a process made up of 4 main steps:
+[Multi-Dimensional Analysis](https://www.uni-bamberg.de/fileadmin/eng-ling/fs/Chapter_21/Index.html?23DimensionsofEnglish.html) (MDA) is a process made up of 4 main steps:
 
 1.  Identification of relevant variables
 2.  Extraction of factors from variables
@@ -1410,10 +1410,42 @@ mda.biber::heatmap_mda(micusp_mda, n_factor = 1)
 The functional interpretation of factors as dimensions (Brezina pgs. 167-168) is probably the most challenging part of MDA. As analysts, we need to make sense out of why features (whether parts-of-speech, rhetorical categories, or other measures) are grouping together and
 contributing to the patterns of variation evident in products of the analysis.
 
-That interpretation usually involves giving names to the dimensions based on their constituent structures. In Biber’s original study, he called his first, most explanatory dimension Involved vs. Informational Production. At the positive (Involved) end of the dimension are telephone and face-to-face conversations. At the negative (Information) end are official documents and academic prose.
+That interpretation usually involves giving names to the dimensions based on their constituent structures. In Biber’s original study, he called his first, most explanatory dimension [Involved vs. Informational Production](https://www.uni-bamberg.de/fileadmin/eng-ling/fs/Chapter_21/Index.html?23DimensionsofEnglish.html). At the positive (Involved) end of the dimension are telephone and face-to-face conversations. At the negative (Information) end are official documents and academic prose.
 
-Features with high positive loadings include private verbs (like *think*), contractions, and first and second person pronouns. Features with high negative loadings include nouns and propositional phrases. Biber concludes that these patterns reflect the communicative purposes
-of the registers. Ones that are more interactive and affective vs. others that are more instructive and informative.
+![](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/biber_dimension1.png)
+
+[Features with high positive loadings](https://www.uni-bamberg.de/fileadmin/eng-ling/fs/Chapter_21/Index.html?23DimensionsofEnglish.html) include private verbs (like *think*), contractions, and first and second person pronouns. Features with high negative loadings include nouns and propositional phrases. Biber concludes that these patterns reflect the communicative purposes of the registers. Ones that are more interactive and affective vs. others that are more instructive and informative.
+
+| Factor 1                 |       |
+|--------------------------|-------|
+| private verbs            | 0.96  |
+| *that* deletion          | 0.91  |
+| contractions             | 0.9   |
+| present tense verbs      | 0.86  |
+| 2nd person pronouns      | 0.86  |
+| *do* as pro-verb         | 0.82  |
+| analytic negation        | 0.78  |
+| demonstrative pronouns   | 0.76  |
+| general emphatics        | 0.74  |
+| 1st person pronouns      | 0.74  |
+| pronoun *it*             | 0.71  |
+| *be* as main verb        | 0.71  |
+| causative subordination  | 0.66  |
+| discourse particles      | 0.66  |
+| indefinite pronouns      | 0.62  |
+| hedges                   | 0.58  |
+| amplifiers               | 0.56  |
+| sentence relatives       | 0.55  |
+| *wh-* questions          | 0.52  |
+| possibility modals       | 0.5   |
+| non-phrasal coordination | 0.48  |
+| *wh-* clauses            | 0.47  |
+| final prepositions       | 0.43  |
+| nouns                    | -0.8  |
+| word length              | -0.58 |
+| prepositions             | -0.54 |
+| type/ token ratio        | -0.54 |
+| attributive adjectives   | -0.47 |
 
 In order to understand how certain features are functioning, it is important to see how they are being used, which we can do effienciently with [Key Words in Context](https://en.wikipedia.org/wiki/Key_Word_in_Context) (KWIC). Here we take “Confidence High” from the positive end of the dimension and “Academic Writing Moves” from the negative using the `kwic()` [function](https://quanteda.io/reference/kwic.html).
 
