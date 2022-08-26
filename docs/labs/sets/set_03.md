@@ -1052,7 +1052,7 @@ library(nFactors)
 
 In order to carry out MDA, we would like to have 5 times as many observations than variables. This generally precludes carrying out MDA (or factor analysis) with simple word counts. We need data that has, in some way, been tagged.
 
-For this lab, we will use from the R package **[pseudobibeR](https://cmu-textstat-docs.readthedocs.io/en/latest/pseudobibeR/pseudobibeR.html)**, which emulates the classification system that Biber has used and reported in much of his research. The package aggregates the lexicogrammatical and functional features widely used for text-type, register, and genre classification tasks.
+For this lab, we will use data prepared using the R package **[pseudobibeR](https://cmu-textstat-docs.readthedocs.io/en/latest/pseudobibeR/pseudobibeR.html)**, which emulates the classification system that Biber has used and reported in much of his research. The package aggregates the lexicogrammatical and functional features widely used for text-type, register, and genre classification tasks.
 
 The scripts are not really taggers. Rather, they use **udpipe** or **spaCy** part-of-speech tagging and dependency parsing to summarize patterns. They organize [67 categories](https://cmu-textstat-docs.readthedocs.io/en/latest/pseudobibeR/pseudobibeR.html).
 
@@ -1061,7 +1061,7 @@ For this lab, you won’t need to use the package functions. But if you’d like
 
 #### The Brown Corpus
 
-Let’s start with data from [the Brown Corpus](https://en.wikipedia.org/wiki/Brown_Corpus), which has been prepared. The Brown family of corpora is discussed on pg. 16 of Brezina. You can also find it here:
+Let’s start with counts from [the Brown Corpus](https://en.wikipedia.org/wiki/Brown_Corpus). The Brown family of corpora is discussed on pg. 16 of Brezina. You can also find more about it here:
 
 <http://icame.uib.no/brown/bcm.html>
 
@@ -1073,7 +1073,11 @@ bc_meta <- read_csv("https://raw.githubusercontent.com/browndw/cmu-textstat-docs
     show_col_types = FALSE)
 ```
 
-We will join the data with the metadata, in order to calculate dimension scores by register and evaluate them. Note that it **must** be formatted as a factor. For convenience sake, we’ll move the file names to the row names and put our factor as the first column.
+We will join the data with the metadata, in order to calculate dimension scores by register and evaluate them.
+
+```{note}
+The categorical variable **must** be formatted as a factor. For convenience sake, we’ll move the file names to the row names and put our factor as the first column.
+~~~
 
 ``` r
 bc <- bc %>%
@@ -1102,8 +1106,7 @@ categories.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/do
 
 #### Determining number of factors
 
-Typically, the number of factors is chosen after inspecting a scree
-plot.
+Typically, the number of factors is chosen after inspecting a scree plot.
 
 ``` r
 screeplot_mda(bc)
@@ -1112,8 +1115,7 @@ screeplot_mda(bc)
 ![Scree plot of
 factors.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-106-1.png)
 
-A common method for interpreting a scree plot is to look for the “bend” in the elbow, which would be 3 or 4 factors in this case. We can also look at the results of other kinds of solutions like optimal coordinates, which measures the gradients associated with eigenvalues
-and their preceding coordinates, and acceleration factor, which determines the coordinate where the slope of the curve changes most abruptly. In this case OC suggests 6 factors and AF 1.
+A common method for interpreting a scree plot is to look for the “bend” in [the elbow](https://en.wikipedia.org/wiki/Elbow_method_(clustering)), which would be 3 or 4 factors in this case. We can also look at the results of other kinds of solutions like optimal coordinates, which measures the gradients associated with [eigenvalues](https://medium.com/fintechexplained/what-are-eigenvalues-and-eigenvectors-a-must-know-concept-for-machine-learning-80d0fd330e47) and their preceding coordinates, and acceleration factor, which determines the coordinate where the slope of the curve changes most abruptly. In this case OC suggests 6 factors and AF 1.
 
 For the purposes of this exercise, we’ll start with 3 factors.
 
