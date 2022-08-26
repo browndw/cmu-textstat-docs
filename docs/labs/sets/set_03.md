@@ -1098,7 +1098,7 @@ corrplot::corrplot(bc_cor, type = "upper", order = "hclust", tl.col = "black",
 ```
 
 ![Correlation matrix of lexico-grammatical
-categories.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-105-1.png)
+categories.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-105-1.png)
 
 #### Determining number of factors
 
@@ -1110,7 +1110,7 @@ screeplot_mda(bc)
 ```
 
 ![Scree plot of
-factors.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-106-1.png)
+factors.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-106-1.png)
 
 A common method for interpreting a scree plot is to look for the “bend” in the elbow, which would be 3 or 4 factors in this case. We can also look at the results of other kinds of solutions like optimal coordinates, which measures the gradients associated with eigenvalues
 and their preceding coordinates, and acceleration factor, which determines the coordinate where the slope of the curve changes most abruptly. In this case OC suggests 6 factors and AF 1.
@@ -1209,7 +1209,7 @@ mda.biber::stickplot_mda(bc_mda, n_factor = 1)
 ```
 
 ![Deminsion score means by discipline plotted along Factor
-1.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-109-1.png)
+1.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-109-1.png)
 
 We can also show the same plot with the factor loadings.
 
@@ -1218,13 +1218,11 @@ mda.biber::heatmap_mda(bc_mda, n_factor = 1)
 ```
 
 ![Deminsion score means by discipline plotted along Factor
-1.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-110-1.png)
+1.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-110-1.png)
 
 #### Evaluating MDA
 
-Typically, MDA is evaluated using ANOVA, reporting the *F* statistic,
-degrees of freedom, and R-squared. We can extract that information from
-a linear model.
+Typically, MDA is evaluated using ANOVA, reporting the *F* statistic, degrees of freedom, and R-squared. We can extract that information from a linear model.
 
 ``` r
 f_aov <- aov(Factor1 ~ group, data = bc_mda)
@@ -1248,8 +1246,6 @@ names(f3_lm$coefficients) <- names(coef(f3_lm)) %>%
     str_remove("group")
 ```
 
-    #> Warning in knit_print.huxtable(x, ...): Unrecognized output format "gfm-yaml". Using `to_screen` to print huxtables.
-    #> Set options("huxtable.knitr_output_format") manually to "latex", "html", "rtf", "docx", "pptx", "md" or "screen".
 
                          ──────────────────────────────────────────────────────────────────────────
                                                            Factor 1      Factor 2      Factor 3    
@@ -1299,12 +1295,9 @@ ds_dict[1:3]
 #>   - ; block, ; bring, ; call, ; center, ; check, ; chill, ; close, ; color, ; control, ; cook, ; cool, ; cover, ; cross, ; cut, ; design, ; discard, ; don, ; down, ; drain, ; e-mail [ ... and 18,754 more ]
 ```
 
-## Tokenize the corpus
+#### Tokenize the corpus
 
-Again, we will use the \*\*micusp_mini\*, and we’ll begin by tokenizing
-the data. Note that we’re retaining as much of the original data as
-possible including punctuation. This is because our dictionary includes
-punctuation marks in it’s entries.
+Again, we will use the `micusp_mini`, and we’ll begin by tokenizing the data. Note that we’re retaining as much of the original data as possible including punctuation. This is because our dictionary includes punctuation marks in it’s entries.
 
 ``` r
 micusp_tokens <- micusp_mini %>%
@@ -1312,8 +1305,7 @@ micusp_tokens <- micusp_mini %>%
     tokens(remove_punct = F, remove_numbers = F, remove_symbols = F, what = "word")
 ```
 
-Next, we will use the **tokens_lookup()** function to count and
-categorize our features.
+Next, we will use the `tokens_lookup()` [function](https://tutorials.quanteda.io/basic-operations/tokens/tokens_lookup/) to count and categorize our features.
 
 ``` r
 ds_counts <- micusp_tokens %>%
@@ -1323,9 +1315,7 @@ ds_counts <- micusp_tokens %>%
     as_tibble()
 ```
 
-Finally, we need to normalize the counts. Because DocuScope is not
-categorizing ALL of our tokens, we need a total count from the original
-tokens object.
+Finally, we need to normalize the counts. Because DocuScope is not categorizing ALL of our tokens, we need a total count from the original tokens object.
 
 ``` r
 tot_counts <- quanteda::ntoken(micusp_tokens) %>%
@@ -1414,7 +1404,7 @@ mda.biber::heatmap_mda(micusp_mda, n_factor = 1)
 ```
 
 ![Dimension score means by discipline plotted along Factor
-1.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_09_files/figure-gfm/unnamed-chunk-122-1.png)
+1.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/unnamed-chunk-122-1.png)
 
 #### Interpreting the factors as dimensions
 
@@ -1426,10 +1416,7 @@ That interpretation usually involves giving names to the dimensions based on the
 Features with high positive loadings include private verbs (like *think*), contractions, and first and second person pronouns. Features with high negative loadings include nouns and propositional phrases. Biber concludes that these patterns reflect the communicative purposes
 of the registers. Ones that are more interactive and affective vs. others that are more instructive and informative.
 
-In order to understand how certain features are functioning, it is
-important to see how they are being used, which we can do effienciently
-with Key Words in Context (KWIC). Here we take “Confidence High” from
-the positive end of the dimension and “Academic Writing Moves” from the
+In order to understand how certain features are functioning, it is important to see how they are being used, which we can do effienciently with Key Words in Context (KWIC). Here we take “Confidence High” from the positive end of the dimension and “Academic Writing Moves” from the
 negative.
 
 ``` r
