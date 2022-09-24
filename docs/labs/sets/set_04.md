@@ -434,7 +434,7 @@ all.equal(km_pca_var$cos2[, 1] * 100/sum(km_pca_var$cos2[, 1]), km_pca_var$contr
 Here they are in tablular form:
 
 ```{note}
-The udipe annotator uses [the Penn Treebank tagset](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html), which has 2 tags that end with **$**: the possessibe pronoun tag (**PRP$**) and the Possessive wh-pronoun tag (**WP$**). Because these become column headers, the **$** symbol is converted into a period.
+The udipe annotator uses [the Penn Treebank tagset](https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html), which has 2 tags that end with **$**: the possessive pronoun tag (**PRP$**) and the Possessive wh-pronoun tag (**WP$**). Because these become column headers, the **$** symbol is converted into a period.
 ```
 
 |            | PC1 % Contribution |
