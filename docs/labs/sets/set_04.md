@@ -280,7 +280,7 @@ plot(as.hclust(hc), cex = 0.6, hang = -1, main = "", sub = "", xlab = "")
 rect.hclust(hc, k = 2)
 ```
 ![Cluster dendrogram (using Euclidean distances and Ward’s method) of
-sample papers in English and Biology cut into 2 clusters.](/Users/user/Desktop/cmu-textstat_docs/demo/vignettes/Lab_10_files/figure-gfm/unnamed-chunk-17-1.png)
+sample papers in English and Biology cut into 2 clusters.](/https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/bio_eng_cut.png)
 
 ### K-means
 
@@ -387,7 +387,7 @@ ggplot(coord_df) + geom_vline(xintercept = 0) + geom_hline(yintercept = 0) +
 ```
 
 ![Cluster dendrogram (using Euclidean distances and Ward’s method) of
-sample papers in English and Biology cut into 2 clusters.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/bio_eng_cut.png)
+sample papers in English and Biology cut into 2 clusters.](https://raw.githubusercontent.com/browndw/cmu-textstat-docs/main/docs/_static/labs_files/figure-gfm/bio_eng_pca.png)
 
 #### Variable contributions
 
